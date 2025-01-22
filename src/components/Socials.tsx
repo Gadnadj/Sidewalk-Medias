@@ -1,10 +1,19 @@
 import React from 'react';
+import { social } from '../data';
 
 type Props = {}
 
 const Socials = (props: Props) => {
     return (
-        <div>Socials</div>
+        <ul className='flex space-x-6'>
+            {social.map((item, index) => (
+                <li className='flex justify-center items-center text-accent' key={index}>
+                    <a className='text-base' href={item.href}>
+                        {item.icon}
+                    </a>
+                </li>
+            ))}
+        </ul>
     );
 };
 
