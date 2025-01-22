@@ -1,6 +1,4 @@
-import React from 'react';
 import { brands } from '../data';
-import { div } from 'framer-motion/client';
 
 type Props = {}
 
