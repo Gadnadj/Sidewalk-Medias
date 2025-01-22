@@ -4,6 +4,7 @@ import Brands from './components/Brands';
 import About from './components/About';
 import Skills from './components/Skills';
 import Portofolio from './components/Portofolio';
+import Services from './components/Services';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <About />
       <Skills />
       <Portofolio />
+      <Services />
       <div style={{ height: '2000px' }}>
 
       </div>
