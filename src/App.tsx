@@ -1,10 +1,15 @@
+import Headers from './components/Headers';
+
 function App() {
 
 
   return (
-    <>
-      <p className="text-red-500">Gad</p>
-    </>
+    <div>
+      <Headers />
+      <div style={{ height: '2000px' }}>
+
+      </div>
+    </div>
   );
 }
 
