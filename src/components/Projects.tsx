@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { projectsData } from '../data';
 import { projectsNav } from '../data';
 import Project from './Project';
-import { ItemType, ProjectType } from './Types';
+import { ItemType } from './Types';
 
 
 
@@ -10,8 +10,8 @@ import { ItemType, ProjectType } from './Types';
 type Props = {}
 
 const Projects = (props: Props) => {
-    const [item, setItem] = useState<ProjectType>({ id: '', name: 'all', image: '', category: '' });
-    const [projects, setProjects] = useState<ProjectType[]>([]);
+    const [item, setItem] = useState<ItemType>({ id: '', name: 'all', image: '', category: '' });
+    const [projects, setProjects] = useState<ItemType[]>([]);
     const [active, setActive] = useState<number>(0);
 
     useEffect(() => {
@@ -46,7 +46,7 @@ const Projects = (props: Props) => {
             </nav>
 
             {/* projects grid */}
-            <section>
+            <section className='grid lg:grid-cols-3 lg:gap-x-8 gap-y-12 lg:gap-y-8 '>
                 {
                     projects.map((item) => (
                         <Project item={item} key={item.id} />
