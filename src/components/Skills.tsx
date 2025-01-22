@@ -8,7 +8,9 @@ const Skills = (props: Props) => {
                 <div className='grid grid-cols-8 md:grid-flow-row'>
                     {
                         skills.map((item, index) => (
-                            <div>
+                            <div
+                                className='flex items-center justify-center'
+                                key={index}>
                                 <img src={item.image} alt="" />
                             </div>
                         ))
