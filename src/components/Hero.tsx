@@ -18,14 +18,15 @@ const Hero = (props: Props) => {
                         <button className='btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all'>Work with me</button>
                     </div>
 
-                    {/* right side */}
-                    <div className='hidden lg:flex flex-1 justify-end items-end' >
+                    {/* right side remove h-full*/}
+                    <div className='hidden lg:flex flex-1 justify-end items-end'>
                         <img
                             src={WomanImg}
                             alt="Woman"
                             className='h-72 w-72 object-contain'
                         />
                     </div>
+
                 </div>
             </div>
         </section>
