@@ -1,10 +1,9 @@
-
 function App() {
 
 
   return (
     <>
-    <p className="text-red-500">Gad</p>
+      <p className="text-red-500">Gad</p>
     </>
   );
 }
