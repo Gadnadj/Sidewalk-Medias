@@ -7,7 +7,7 @@ type Props = {}
 const Portofolio = (props: Props) => {
     return (
         <section
-            id='portofolio'
+            id='portfolio'
             className='section bg-primary min-h-[1400px]'
         >
             <div className='container mx-auto'>

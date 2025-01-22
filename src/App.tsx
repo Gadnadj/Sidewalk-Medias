@@ -5,6 +5,10 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Portofolio from './components/Portofolio';
 import Services from './components/Services';
+import Contact from './Contact';
+import Footer from './components/Footer';
+import BackToTopButton from './components/BackToTopButton';
+// import Testimonials from './components/Testimonials';
 
 function App() {
 
@@ -18,7 +22,11 @@ function App() {
       <Skills />
       <Portofolio />
       <Services />
-      <div style={{ height: '2000px' }}>
+      {/* <Testimonials /> */}
+      <Contact />
+      <Footer />
+      <BackToTopButton />
+      <div >
 
       </div>
     </div>
