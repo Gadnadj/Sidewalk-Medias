@@ -1,8 +1,11 @@
 import WomanImg from '../assets/img/sidewalk.png';
 import { motion } from 'framer-motion';
 import Reveal from './Reveal';
+import CV from '../assets/Gad Nadjar.pdf';
 
 const Hero = () => {
+
+    console.log(import.meta.env.BASE_URL);
     return (
         <section
             id='home'
@@ -25,7 +28,7 @@ const Hero = () => {
                             </p>
                         </Reveal>
                         <motion.a 
-                            href="Gad_Nadjar.pdf" 
+                            href={CV}
                             download="Yael_Nadjar_CV.pdf"
                             className='btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all'
                             initial={{ opacity: 0, y: 20 }}
