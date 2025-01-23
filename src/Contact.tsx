@@ -19,8 +19,8 @@ const Contact = (props: Props) => {
                     <div className='flex flex-1 flex-col items-start space-y-8 mb-12 lg:mb-0 lg:pt-2'>
                         {
                             contact.map((item, index) => (
-                                <div className='flex flex-col lg:flow-row gap-x-4'>
-                                    <div className='text-accent rounded-sm w-14 h-14 flex items-start justify-normal mt-2 mb-4 lg:mb-0 text-2xl'>
+                                <div key={index} className='flex flex-col lg:flow-row gap-x-4'>
+                                    <div className='text-accent rounded-sm w-14 h-14 flex items-start justify-normal text-2xl'>
                                         {item.icon}
                                     </div>
                                     <div>
