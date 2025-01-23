@@ -8,6 +8,7 @@ import Contact from './Contact';
 import Footer from './components/Footer';
 import BackToTopButton from './components/BackToTopButton';
 import Brands from './components/Brands';
+import SectionDivider from './components/SectionDivider';
 
 function App() {
 
@@ -16,11 +17,17 @@ function App() {
     <div>
       <Headers />
       <Hero />
+      <SectionDivider bgColor="bg-primary" />
       <Brands />
+      <SectionDivider />
       <About />
+      <SectionDivider bgColor="bg-tertiary" />
       <Skills />
+      <SectionDivider />
       <Portofolio />
+      <SectionDivider bgColor="bg-tertiary" />
       <Services />
+      <SectionDivider />
       <Contact />
       <Footer />
       <BackToTopButton />
