@@ -43,7 +43,7 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.2 }}
                             >
-                                Freelance Web Developer
+                                Graphic Designer
                             </motion.p>
                             <motion.hr 
                                 className='mb-8 opacity-5'

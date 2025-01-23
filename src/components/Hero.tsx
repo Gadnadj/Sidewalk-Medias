@@ -19,12 +19,12 @@ const Hero = () => {
                         </Reveal>
                         <Reveal delay={0.2}>
                             <h1 className='text-4xl leading-[44px] md:text-5xl md:leading-tight lg:text-7xl lg:leading-[1.2] font-bold md:tracking-[-2px] text-center lg:text-start'>
-                                I Build & Design <br /> Web Interfaces.
+                                <span className='text-accent'>Cross the street</span>  <br /> with us.
                             </h1>
                         </Reveal>
                         <Reveal delay={0.4}>
                             <p className='pt-4 pb-8 md:pt-6 md:pb-12 max-w-[480px] text-lg text-center lg:text-left'>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Logo • Business card • Flyer • Magazine • Video • Social Media • Website • Menu
                             </p>
                         </Reveal>
                         <Link
@@ -34,7 +34,7 @@ const Hero = () => {
                             offset={-70}
                             className="inline-block"
                         >
-                            <motion.button 
+                            <motion.button
                                 className='btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all'
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ const Hero = () => {
                     </div>
 
                     {/* right side */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: 100 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, delay: 0.8 }}
