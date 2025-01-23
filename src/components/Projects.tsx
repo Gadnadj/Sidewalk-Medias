@@ -78,7 +78,7 @@ const Projects = () => {
                 <div className='flex justify-center mt-8'>
                     <motion.button
                         onClick={loadMoreProjects}
-                        className='bg-blue-500 text-white px-6 py-2 rounded-lg'
+                        className='bg-accent hover:bg-accent-hover text-white px-6 py-2 rounded-lg'
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >

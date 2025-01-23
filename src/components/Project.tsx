@@ -15,13 +15,13 @@ const Project = ({ item }: Props) => {
             transition={{ duration: 0.6 }}
             layout
         >
-            <motion.div 
+            <motion.div
                 className='relative group mb-8'
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: 'spring', stiffness: 300 }}
             >
                 <img className='rounded-2xl w-96 h-96 object-cover' src={item.image} alt={item.name} />
-                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl flex items-center justify-center z-[9999]">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
