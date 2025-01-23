@@ -3,9 +3,6 @@ import { FiInstagram } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
 import { FiMapPin } from 'react-icons/fi';
 import { FiLayout } from 'react-icons/fi';
-import { FiSettings } from 'react-icons/fi';
-import { FiPenTool } from 'react-icons/fi';
-import { FiTag } from 'react-icons/fi';
 import { TiBusinessCard } from 'react-icons/ti';
 
 
@@ -67,16 +64,6 @@ import Sophie_Resume from './assets/img/projects2/Sophie CV.jpg';
 import Trouver_En_Magazine from './assets/img/projects2/Trouver en Israel Magazine.jpg';
 import Union_Logo from './assets/img/projects2/Union Logo.jpg';
 
-
-// skills images
-import SkillImg1 from './assets/img/skills/html5.png';
-import SkillImg2 from './assets/img/skills/css3.png';
-import SkillImg3 from './assets/img/skills/js.png';
-import SkillImg4 from './assets/img/skills/reactjs.png';
-import SkillImg5 from './assets/img/skills/nextjs.png';
-import SkillImg6 from './assets/img/skills/nodejs.png';
-import SkillImg7 from './assets/img/skills/git.png';
-import SkillImg8 from './assets/img/skills/figma.png';
 
 // testimonial images
 import TestiImage1 from './assets/img/testimonials/testimonial-1.webp';
