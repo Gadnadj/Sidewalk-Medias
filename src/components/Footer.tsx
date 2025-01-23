@@ -20,16 +20,21 @@ const Footer = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         {social.map((item, index) => (
-                            <motion.a
-                                className='text-accent text-base'
-                                href={item.href}
-                                key={index}
-                                whileHover={{ scale: 1.2, rotate: 360 }}
-                                transition={{ type: 'spring', stiffness: 300 }}
-                            >
-                                {item.icon}
-                            </motion.a>
-                        ))}
+                <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.2 }}
+                    whileTap={{ scale: 0.9 }}
+                >
+                    <a
+                        className='text-2xl sm:text-xl md:text-2xl lg:text-3xl text-accent hover:text-accent-hover transition-all duration-300'
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {item.icon}
+                    </a>
+                </motion.div>
+            ))}
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
