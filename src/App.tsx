@@ -11,10 +11,8 @@ import Brands from './components/Brands';
 import SectionDivider from './components/SectionDivider';
 
 function App() {
-
-
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Headers />
       <Hero />
       <SectionDivider bgColor="bg-secondary" />
@@ -31,9 +29,6 @@ function App() {
       <Contact />
       <Footer />
       <BackToTopButton />
-      <div >
-
-      </div>
     </div>
   );
 }
