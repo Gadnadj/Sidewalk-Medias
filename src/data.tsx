@@ -16,6 +16,16 @@ import FiverBrandIcon from './assets/img/brands/fiverr.png';
 import BehanceBrandIcon from './assets/img/brands/behance.png';
 import DribbbleBrandIcon from './assets/img/brands/dribbble.png';
 
+import Photoshop from './assets/img/skills2/Photoshop.png';
+import Illustrator from './assets/img/skills2/illustrator.png';
+import Indesign from './assets/img/skills2/indesign.png';
+import AfterEffect from './assets/img/skills2/After-Effects-Logo.png';
+import CapCut from './assets/img/skills2/capcut.png';
+import Figma from './assets/img/skills2/figma.png';
+import Wix from './assets/img/skills2/wix.png';
+import Wordpress from './assets/img/skills2/wordpress.png';
+
+
 import AM from './assets/img/brands/AM.png';
 import TM from './assets/img/brands/TM.png';
 import HM from './assets/img/brands/HM.png';
@@ -378,36 +388,36 @@ export const projectsNav = [
 // skill
 export const skills = [
     {
-        image: SkillImg1,
-        name: 'HTML5'
+        image: Photoshop,
+        name: 'Photoshop'
     },
     {
-        image: SkillImg2,
-        name: 'CSS3'
+        image: Illustrator,
+        name: 'Illustrator'
     },
     {
-        image: SkillImg3,
-        name: 'JavaScript'
+        image: Indesign,
+        name: 'Indesign'
     },
     {
-        image: SkillImg4,
-        name: 'ReactJS'
+        image: AfterEffect,
+        name: 'AfterEffects'
     },
     {
-        image: SkillImg5,
-        name: 'NextJS'
+        image: CapCut,
+        name: 'CapCut'
     },
     {
-        image: SkillImg6,
-        name: 'NodeJS'
-    },
-    {
-        image: SkillImg7,
-        name: 'Git'
-    },
-    {
-        image: SkillImg8,
+        image: Figma,
         name: 'Figma'
+    },
+    {
+        image: Wix,
+        name: 'Wix'
+    },
+    {
+        image: Wordpress,
+        name: 'WordPress'
     }
 ];
 
@@ -432,7 +442,7 @@ export const services = [
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
     },
     {
-        icon: <LuFileSpreadsheet /> ,
+        icon: <LuFileSpreadsheet />,
         name: 'Flyer',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
