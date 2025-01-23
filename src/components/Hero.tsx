@@ -13,7 +13,7 @@ const Hero = () => {
                         <h1 className='text-4xl leading-[44px] md:text-5xl md:leading-tight lg:text-7xl lg:leading-[1.2] font-bold md:tracking-[-2px] text-center lg:text-start'>I Build & Design <br /> Web Interfaces.</h1>
                         <p className='pt-4 pb-8 md:pt-6 md:pb-12 max-w-[480px] text-lg text-center lg:text-left'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, dolor nostrum. Odit quasi quos velit rerum minus quam. Corporis, nemo?</p>
                         <a 
-                            href="src/assets/Gad Nadjar.pdf" 
+                            href="/Gad_Nadjar.pdf" 
                             download="Yael_Nadjar_CV.pdf"
                             className='btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all'
                         >
