@@ -3,7 +3,6 @@ import { contact } from './data';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from 'framer-motion';
-import Reveal from './components/Reveal';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
