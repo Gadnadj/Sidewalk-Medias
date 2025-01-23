@@ -1,8 +1,37 @@
+import { FormEvent, useState } from 'react';
 import { contact } from './data';
 
-type Props = {}
+const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
 
-const Contact = (props: Props) => {
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        
+        try {
+            const response = await fetch('https://formspree.io/f/xwpvkbdq', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+                setFormData({ name: '', email: '', subject: '', message: '' });
+            } else {
+                alert('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            alert('An error occurred. Please try again later.');
+        }
+    };
+
     return (
         <section className='section bg-primary' id='contact'>
             <div className='container mx-auto'>
@@ -38,19 +67,44 @@ const Contact = (props: Props) => {
                             ))
                         }
                     </div>
-                    <form className='space-y-8 w-full max-w-[780px]'>
+                    <form className='space-y-8 w-full max-w-[780px]' onSubmit={handleSubmit}>
                         <div className='flex gap-8'>
-                            <input type="text" className='input' placeholder='Your name' />
-                            <input type="email" className='input' placeholder='Your email' />
+                            <input
+                                className='input'
+                                type='text'
+                                placeholder='Your name'
+                                value={formData.name}
+                                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                required
+                            />
+                            <input
+                                className='input'
+                                type='email'
+                                placeholder='Your email'
+                                value={formData.email}
+                                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                required
+                            />
                         </div>
-
-                        <textarea className='textarea' placeholder='Your message'></textarea>
-                        <button className='btn btn-lg bg-accent hover:bg-accent-hover'>
-                            Send Message
+                        <input
+                            className='input'
+                            type='text'
+                            placeholder='Subject'
+                            value={formData.subject}
+                            onChange={(e) => setFormData({...formData, subject: e.target.value})}
+                            required
+                        />
+                        <textarea
+                            className='textarea'
+                            placeholder='Your message'
+                            value={formData.message}
+                            onChange={(e) => setFormData({...formData, message: e.target.value})}
+                            required
+                        ></textarea>
+                        <button type='submit' className='btn btn-lg bg-accent hover:bg-accent-hover'>
+                            Send message
                         </button>
-
                     </form>
-
                 </div>
             </div>
         </section>
