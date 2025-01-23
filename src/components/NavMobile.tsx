@@ -9,7 +9,6 @@ const NavMobile = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const { language } = useLanguage();
     const t = translations[language];
-    const isRTL = language === 'he';
 
     // framer motion variants
     const circleVariants = {
