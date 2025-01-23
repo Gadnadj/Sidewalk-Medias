@@ -27,9 +27,9 @@ const Brands = () => {
     };
 
     return (
-        <section className='min-h-[146px] bg-tertiary flex items-center'>
+        <section className='min-h-[100px] bg-tertiary flex items-center'>
             <motion.div
-                className='container mx-auto flex md:justify-between items-center flex-wrap justify-evenly'
+                className='container mx-auto flex justify-between items-center'
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -41,14 +41,18 @@ const Brands = () => {
                         variants={itemVariants}
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: 'spring', stiffness: 300 }}
+                        className="flex items-center justify-center px-2"
                     >
                         <img
                             src={item.img}
                             alt=""
-                            className={`${index === 0 ? 'h-20 w-20' :
-                                index === brands2.length - 1 ? 'h-24 w-40' :
-                                    'w-48 h-48'
-                                }`}
+                            className={`${
+                                index === 0 
+                                    ? 'h-8 w-8 sm:h-12 sm:w-12 md:h-20 md:w-20' 
+                                    : index === brands2.length - 1 
+                                        ? 'h-12 w-20 sm:h-16 sm:w-28 md:h-24 md:w-40' 
+                                        : 'w-20 h-20 sm:w-28 sm:h-28 md:w-48 md:h-48'
+                            } object-contain`}
                         />
                     </motion.div>
                 ))}
