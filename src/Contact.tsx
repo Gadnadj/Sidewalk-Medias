@@ -73,16 +73,17 @@ const Contact = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        Contact Me
+                        Contact me
                     </motion.h2>
                     <motion.p 
-                        className="subtitle"
+                        className='subtitle'
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Let's bring your vision to life! Whether you have a specific project in mind or just want to explore possibilities,
+                        I'm here to help transform your ideas into stunning visual realities.
                     </motion.p>
                 </div>
 
