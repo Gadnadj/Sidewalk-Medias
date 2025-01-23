@@ -1,5 +1,6 @@
 import Image from '../assets/img/about.webp';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 const About = () => {
     return (
@@ -62,17 +63,27 @@ const About = () => {
                                 similique fugit accusamus dolorem tempore, vel inventore assumenda, odit quod repellendus.<br /> Lorem ipsum dolor, sit amet
                                 consectetur adipisicing elit. Fugiat quod nemo repellat nihil harum quia distinctio porro! Magni, at fuga!
                             </motion.p>
-                            <motion.button 
-                                className='btn btn-md bg-accent hover:bg-accent-hover transition-all'
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.6 }}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Contact Me
-                            </motion.button>
+                            <motion.div>
+                                <Link
+                                    to="contact"
+                                    smooth={true}
+                                    duration={500}
+                                    offset={-70}
+                                    className="inline-block"
+                                >
+                                    <motion.button 
+                                        className='btn btn-md bg-accent hover:bg-accent-hover transition-all'
+                                        initial={{ opacity: 0, y: 20 }}
+                                        whileInView={{ opacity: 1, y: 0 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.5, delay: 0.6 }}
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                    >
+                                        Contact Me
+                                    </motion.button>
+                                </Link>
+                            </motion.div>
                         </div>
                     </motion.div>
                 </div>
