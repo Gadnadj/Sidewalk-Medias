@@ -55,7 +55,7 @@ const Skills = () => {
                         >
                             <img src={item.image} alt={item.name}
                             />
-                            <div className="absolute -bottom-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="absolute -bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <p className="bg-black/80 text-white px-3 py-1 rounded-lg text-sm whitespace-nowrap">
                                     {item.name}
                                 </p>
