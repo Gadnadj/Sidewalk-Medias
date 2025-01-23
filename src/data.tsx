@@ -1,4 +1,4 @@
-import { FiFacebook, FiLinkedin } from 'react-icons/fi';
+import { FiBookOpen, FiFacebook, FiLinkedin } from 'react-icons/fi';
 import { FiInstagram } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
 import { FiMapPin } from 'react-icons/fi';
@@ -6,6 +6,7 @@ import { FiLayout } from 'react-icons/fi';
 import { FiSettings } from 'react-icons/fi';
 import { FiPenTool } from 'react-icons/fi';
 import { FiTag } from 'react-icons/fi';
+import { TiBusinessCard } from 'react-icons/ti';
 
 
 // companies icons
@@ -72,6 +73,9 @@ import TestiImage1 from './assets/img/testimonials/testimonial-1.webp';
 import TestiImage2 from './assets/img/testimonials/testimonial-2.webp';
 import TestiImage3 from './assets/img/testimonials/testimonial-3.webp';
 import { FaTiktok, FaTwitter } from 'react-icons/fa';
+import { LuFileSpreadsheet } from 'react-icons/lu';
+import { IoVideocamOutline } from 'react-icons/io5';
+import { TfiWorld } from 'react-icons/tfi';
 
 // navigation
 export const navigation = [
@@ -411,25 +415,37 @@ export const skills = [
 export const services = [
     {
         icon: <FiLayout />,
-        name: 'Web Design',
+        name: 'Logo',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
     },
     {
-        icon: <FiSettings />,
-        name: 'Web Development',
+        icon: <TiBusinessCard />,
+        name: 'Business Card',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
     },
     {
-        icon: <FiPenTool />,
-        name: 'Branding',
+        icon: <FiBookOpen />,
+        name: 'Magazine',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
     },
     {
-        icon: <FiTag />,
-        name: 'SEO',
+        icon: <LuFileSpreadsheet /> ,
+        name: 'Flyer',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
+    },
+    {
+        icon: <IoVideocamOutline />,
+        name: 'Video',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
+    },
+    {
+        icon: <TfiWorld />,
+        name: 'Webiste',
         description:
             'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
     }
