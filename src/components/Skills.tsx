@@ -34,6 +34,16 @@ const Skills = () => {
     return (
         <section className='bg-tertiary py-12'>
             <div className='container mx-auto'>
+                <div className='flex flex-col items-center text-center mb-12'>
+                    <motion.h2 
+                        className='section-title before:content-skills relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-28 before:hidden before:lg:block'
+                        initial={{ opacity: 0, y: -20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                    >
+                        Skills
+                    </motion.h2>
+                </div>
                 <motion.div
                     className='grid grid-cols-8 md:grid-flow-row'
                     variants={containerVariants}
