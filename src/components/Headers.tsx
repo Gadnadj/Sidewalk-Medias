@@ -3,15 +3,8 @@ import NavBar from './NavBar';
 import NavMobile from './NavMobile';
 import Socials from './Socials';
 import { motion } from 'framer-motion';
-import { navigation } from '../data';
-import { Link } from 'react-scroll';
-import { useLanguage } from '../context/LanguageContext';
-import { translations } from '../translations';
 
 const Headers = () => {
-    const { language } = useLanguage();
-    const t = translations[language];
-    const isRTL = language === 'he';
     const [background, setBackground] = useState<boolean>(false);
 
     useEffect(() => {
