@@ -13,7 +13,7 @@ import FiverBrandIcon from './assets/img/brands/fiverr.png';
 import BehanceBrandIcon from './assets/img/brands/behance.png';
 import DribbbleBrandIcon from './assets/img/brands/dribbble.png';
 
-import Photoshop from './assets/img/skills2/Photoshop.png';
+import Photoshop from './assets/img/skills2/photoshop.png';
 import Illustrator from './assets/img/skills2/illustrator.png';
 import Indesign from './assets/img/skills2/indesign.png';
 import AfterEffect from './assets/img/skills2/After-Effects-Logo.png';
@@ -414,37 +414,37 @@ export const services = [
         icon: <FiLayout />,
         name: 'Logo',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
+            'Creation of unique and memorable logos that embody the essence of your brand. A professional design that sets you apart from the competition and remains etched in the minds of your clients.'
     },
     {
         icon: <TiBusinessCard />,
         name: 'Business Card',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
+            'Elegant and impactful business cards that make a strong impression. A carefully crafted design that reflects your professionalism and strengthens your brand image.'
     },
     {
         icon: <FiBookOpen />,
         name: 'Magazine',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
+            'Creative and professional magazine layout that captivates your readers. A perfect harmony between text and images for an optimal reading experience.'
     },
     {
         icon: <LuFileSpreadsheet />,
         name: 'Flyer',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
+            'Design of eye-catching flyers that attract attention and effectively convey your message. A striking design to maximize the impact of your promotional campaigns.'
     },
     {
         icon: <IoVideocamOutline />,
         name: 'Video',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
+            'Production of dynamic and engaging video content for your social media and communications. Animations that bring your message to life and captivate your audience.'
     },
     {
         icon: <TfiWorld />,
-        name: 'Webiste',
+        name: 'Website',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio perferendis volm quibusdam ullam qui dolore.'
+            'Creation of modern and responsive websites that reflect your identity. An optimized user experience combined with aesthetic design for an effective online presence.'
     }
 ];
 

@@ -59,9 +59,13 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.4 }}
                             >
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo ab iste cumque! Quis velit, labore libero incidunt laudantium eum
-                                similique fugit accusamus dolorem tempore, vel inventore assumenda, odit quod repellendus.<br /> Lorem ipsum dolor, sit amet
-                                consectetur adipisicing elit. Fugiat quod nemo repellat nihil harum quia distinctio porro! Magni, at fuga!
+                                Passionate about graphic design and visual communication, I create unique and memorable brand identities.
+                                From designing elegant logos to captivating magazine layouts, modern websites, and engaging social media content,
+                                I bring your projects to life with creativity and professionalism. <br /><br />
+                                
+                                My approach combines technical expertise, artistic sensitivity, and a deep understanding of my clients' needs.
+                                Whether you're an established company or an ambitious startup, I am committed to transforming
+                                your ideas into impactful designs that set you apart from the competition.
                             </motion.p>
                             <motion.div>
                                 <Link
