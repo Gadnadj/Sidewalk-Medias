@@ -1,4 +1,4 @@
-import { FiFacebook, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiFacebook, FiLinkedin } from 'react-icons/fi';
 import { FiInstagram } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
 import { FiMapPin } from 'react-icons/fi';
@@ -37,6 +37,8 @@ import SkillImg8 from './assets/img/skills/figma.png';
 import TestiImage1 from './assets/img/testimonials/testimonial-1.webp';
 import TestiImage2 from './assets/img/testimonials/testimonial-2.webp';
 import TestiImage3 from './assets/img/testimonials/testimonial-3.webp';
+import { AiFillTikTok } from 'react-icons/ai';
+import { FaTiktok, FaTwitter } from 'react-icons/fa';
 
 // navigation
 export const navigation = [
@@ -85,8 +87,12 @@ export const social = [
         href: 'https://www.linkedin.com/in/sidewalkmedias/'
     },
     {
-        icon: <FiTwitter />,
-        href: ''
+        icon: <FaTiktok />,
+        href: 'https://www.tiktok.com/@sidewalkmedias'
+    },
+    {
+        icon: <FaTwitter />,
+        href: 'https://x.com/sidewalkmedias/'
     }
 ];
 
