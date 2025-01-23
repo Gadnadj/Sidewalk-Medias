@@ -7,6 +7,7 @@ import Services from './components/Services';
 import Contact from './Contact';
 import Footer from './components/Footer';
 import BackToTopButton from './components/BackToTopButton';
+import Brands from './components/Brands';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
     <div>
       <Headers />
       <Hero />
+      <Brands />
       <About />
       <Skills />
       <Portofolio />

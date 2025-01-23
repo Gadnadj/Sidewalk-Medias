@@ -15,16 +15,24 @@ import FiverBrandIcon from './assets/img/brands/fiverr.png';
 import BehanceBrandIcon from './assets/img/brands/behance.png';
 import DribbbleBrandIcon from './assets/img/brands/dribbble.png';
 
-// projects images
-import Project1 from './assets/img/projects/p1.webp';
-import Project2 from './assets/img/projects/p2.webp';
-import Project3 from './assets/img/projects/p3.webp';
-import Project4 from './assets/img/projects/p4.webp';
-import Project5 from './assets/img/projects/p5.webp';
-import Project6 from './assets/img/projects/p6.webp';
+import AM from './assets/img/brands/AM.png';
+import TM from './assets/img/brands/TM.png';
+import HM from './assets/img/brands/HM.png';
+import GoldaBrandIcon from './assets/img/brands/Golda Magazine Png.png';
+
+
+
+// // projects images
+// import Project1 from './assets/img/projects/p1.webp';
+// import Project2 from './assets/img/projects/p2.webp';
+// import Project3 from './assets/img/projects/p3.webp';
+// import Project4 from './assets/img/projects/p4.webp';
+// import Project5 from './assets/img/projects/p5.webp';
+// import Project6 from './assets/img/projects/p6.webp';
 
 //projects 2 images
 
+import Sidewalk_Media_Post from './assets/img/projects2/WhereWere.png';
 import Advisory_Brochure from './assets/img/projects2/12 Advisory brochure.jpg';
 import Advisory_Website from './assets/img/projects2/12 Advisory.jpg';
 import Ima_Logo from './assets/img/projects2/Ima Logo.jpg';
@@ -145,121 +153,150 @@ export const brands = [
     }
 ];
 
+export const brands2 = [
+    {
+        img: TM,
+        href: ''
+    },
+    {
+        img: AM,
+        href: ''
+    },
+    {
+        img: GoldaBrandIcon,
+        href: ''
+    },
+    {
+        img: HM,
+        href: ''
+    }
+
+
+];
+
+
 //projects 2
 
 export const projectData2 = [
+
     {
         id: '1',
+        image: Sidewalk_Media_Post,
+        name: 'Sidewalk Medias Post',
+        category: 'Post'
+    },
+    {
+        id: '2',
         image: Advisory_Brochure,
         name: 'Advisory Brochure',
         category: 'Brochure'
     }, {
-        id: '2',
+        id: '3',
         image: Advisory_Website,
         name: 'Advisory Website',
         category: 'Website'
     }, {
-        id: '3',
+        id: '4',
         image: Ima_Logo,
         name: 'Ima Logo',
         category: 'Logo'
     }, {
-        id: '4',
+        id: '5',
         image: Ima_Flyer,
         name: 'Ima Flyer',
         category: 'Flyer'
     }, {
-        id: '5',
+        id: '6',
         image: Anahide_Magazine,
         name: 'Anahide Magazine',
         category: 'Magazine'
     }, {
-        id: '6',
+        id: '7',
         image: Electra_Logo,
         name: 'Electra Logo',
         category: 'Logo'
     }, {
-        id: '7',
+        id: '8',
         image: G_Tikchoret_Logo,
         name: 'ג תקשורת לוגו',
         category: 'Logo'
     }, {
-        id: '8',
+        id: '9',
         image: Garage_Axial_Flyer,
         name: 'Garage Axial Flyer',
         category: 'Flyer'
     }, {
-        id: '9',
+        id: '10',
         image: Golda_Logo,
         name: 'Golda Logo',
         category: 'Logo'
     }, {
-        id: '10',
+        id: '11',
         image: Golda_Magazine,
         name: 'Golda Magazine',
         category: 'Magazine'
     }, {
-        id: '11',
+        id: '12',
         image: Hamagazin,
-        name: 'Hamagazin Magazine',
+        name: 'המגזין',
         category: 'Magazine'
     }, {
-        id: '12',
+        id: '13',
         image: Infinity_House_Logo,
         name: 'Infinity House Logo',
         category: 'Logo'
     }, {
-        id: '13',
+        id: '14',
         image: Jenifer_Post,
         name: 'Jenifer Post',
         category: 'Post'
     }, {
-        id: '14',
+        id: '15',
         image: Mamash_Taim,
         name: 'Mamash Taim Logo + Website',
         category: 'Logo'
     }, {
-        id: '15',
+        id: '16',
         image: Mazal_Home_Logo,
         name: 'Mazal Home Logo',
         category: 'Logo'
     }, {
-        id: '16',
+        id: '17',
         image: Mazal_Home_Website,
         name: 'Mazal Home Website',
         category: 'Website'
     }, {
-        id: '17',
+        id: '18',
         image: Poster,
         name: 'Poster',
         category: 'Poster'
     },
     {
-        id: '18',
+        id: '19',
         image: Prestige_Brochure,
         name: 'Prestige Brochure',
         category: 'Brochure'
     },
     {
-        id: '19',
+        id: '20',
         image: Resto_Menu,
         name: 'Restaurant Menu',
         category: 'Poster'
     },
     {
-        id: '20',
+        id: '21',
         image: Sophie_Resume,
         name: 'Sophie Resume',
         category: 'Poster'
     },
     {
-        id: '21',
+        id: '22',
         image: Trouver_En_Magazine,
         name: 'Trouver En Magazine',
         category: 'Magazine'
     },
     {
-        id: '22',
+        id: '23',
         image: Union_Logo,
         name: 'Union Des Independants Logo',
         category: 'Logo'
