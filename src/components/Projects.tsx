@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { projectsData } from '../data';
+import { projectData2 } from '../data';
 import { projectsNav } from '../data';
 import Project from './Project';
 import { ItemType } from './Types';
@@ -13,10 +13,10 @@ const Projects = () => {
     useEffect(() => {
         // get projects bade on item
         if (item.name === 'all') {
-            setProjects(projectsData);
+            setProjects(projectData2);
         }
         else {
-            const newProjects = projectsData.filter((project) => {
+            const newProjects = projectData2.filter((project) => {
                 return project.category.toLowerCase() === item.name;
             });
             setProjects(newProjects);
@@ -31,14 +31,14 @@ const Projects = () => {
     return (
         <div>
             {/* nav */}
-            <motion.nav 
+            <motion.nav
                 className='mt-12 mb-12 max-w-xl mx-auto'
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
             >
-                <ul className='flex flex-col md:flex-row justify-evenly items-center text-white'>
+                <ul className='flex flex-wrap md:flex-nowrap justify-center items-center text-white'>
                     {projectsNav.map((item, index) => (
                         <motion.li
                             key={index}
@@ -54,7 +54,7 @@ const Projects = () => {
             </motion.nav>
 
             {/* projects grid */}
-            <motion.section 
+            <motion.section
                 className='grid lg:grid-cols-3 lg:gap-x-8 gap-y-12 lg:gap-y-8'
                 layout
                 initial={{ opacity: 0, y: 20 }}
