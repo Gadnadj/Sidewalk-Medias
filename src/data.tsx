@@ -171,28 +171,36 @@ export const projectsNav = [
 // skill
 export const skills = [
     {
-        image: SkillImg1
+        image: SkillImg1,
+        name: 'HTML5'
     },
     {
-        image: SkillImg2
+        image: SkillImg2,
+        name: 'CSS3'
     },
     {
-        image: SkillImg3
+        image: SkillImg3,
+        name: 'JavaScript'
     },
     {
-        image: SkillImg4
+        image: SkillImg4,
+        name: 'ReactJS'
     },
     {
-        image: SkillImg5
+        image: SkillImg5,
+        name: 'NextJS'
     },
     {
-        image: SkillImg6
+        image: SkillImg6,
+        name: 'NodeJS'
     },
     {
-        image: SkillImg7
+        image: SkillImg7,
+        name: 'Git'
     },
     {
-        image: SkillImg8
+        image: SkillImg8,
+        name: 'Figma'
     }
 ];
 
