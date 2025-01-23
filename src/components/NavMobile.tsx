@@ -2,9 +2,14 @@ import { useState } from 'react';
 import { navigation } from '../data';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 const NavMobile = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const { language } = useLanguage();
+    const t = translations[language];
+    const isRTL = language === 'he';
 
     // framer motion variants
     const circleVariants = {
@@ -47,7 +52,7 @@ const NavMobile = () => {
                 variants={circleVariants}
                 initial='hidden'
                 animate={isOpen ? 'visible' : 'hidden'}
-                className='w-4 h-4 rounded-full bg-accent fixed top-0 right-0' >
+                className='w-4 h-4 rounded-full bg-accent fixed top-0 right-0'>
             </motion.div>
 
             {/* menu */}
@@ -62,22 +67,20 @@ const NavMobile = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
                 </div>
-                {
-                    navigation.map((item, index) => (
-                        <li key={index} className='mb-8'>
-                            <Link
-                                to={item.href}
-                                smooth={true}
-                                duration={500}
-                                offset={-70}
-                                className='text-xl cursor-pointer capitalize'
-                                onClick={() => setIsOpen(false)}
-                            >
-                                {item.name}
-                            </Link>
-                        </li>
-                    ))
-                }
+                {navigation.map((item, index) => (
+                    <li key={index} className='mb-8'>
+                        <Link
+                            to={item.href}
+                            smooth={true}
+                            duration={500}
+                            offset={-70}
+                            className='text-xl cursor-pointer capitalize'
+                            onClick={() => setIsOpen(false)}
+                        >
+                            {t.nav[item.name as keyof typeof t.nav]}
+                        </Link>
+                    </li>
+                ))}
             </motion.ul>
         </nav>
     );

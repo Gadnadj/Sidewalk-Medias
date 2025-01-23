@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { projectData2 } from '../data';
 import { projectsNav } from '../data';
 import Project from './Project';
 import { ItemType } from './Types';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 const Projects = () => {
+    const { language } = useLanguage();
+    const t = translations[language];
+
     const [item, setItem] = useState<ItemType>({ id: '', name: 'all', image: '', category: '' });
     const [projects, setProjects] = useState<ItemType[]>([]);
     const [active, setActive] = useState<number>(0);
@@ -25,8 +30,8 @@ const Projects = () => {
         }
     }, [item]);
 
-    const handleClick = (e: React.MouseEvent<HTMLLIElement>, index: number) => {
-        setItem({ id: '', name: e.currentTarget.textContent!.toLowerCase(), image: '', category: '' });
+    const handleClick = (index: number, item: { name: string }) => {
+        setItem({ id: '', name: item.name.toLowerCase(), image: '', category: '' });
         setActive(index);
     };
 
@@ -45,17 +50,20 @@ const Projects = () => {
                 transition={{ duration: 0.5 }}
             >
                 <ul className='flex flex-wrap md:flex-nowrap justify-center items-center text-white'>
-                    {projectsNav.map((item, index) => (
-                        <motion.li
-                            key={index}
-                            className={`${active === index ? 'active' : ''} cursor-pointer capitalize m-4`}
-                            onClick={(e) => handleClick(e, index)}
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            {item.name}
-                        </motion.li>
-                    ))}
+                    {projectsNav.map((item, index) => {
+                        const categoryKey = item.name.toLowerCase() as keyof typeof t.portfolio.categories;
+                        return (
+                            <motion.li
+                                onClick={() => handleClick(index, item)}
+                                className={`${active === index ? 'active' : ''} cursor-pointer capitalize m-4`}
+                                key={index}
+                                whileHover={{ scale: 1.1 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                {t.portfolio.categories[categoryKey] || item.name}
+                            </motion.li>
+                        );
+                    })}
                 </ul>
             </motion.nav>
 
@@ -82,7 +90,7 @@ const Projects = () => {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        More Projects
+                        {t.portfolio.loadMore}
                     </motion.button>
                 </div>
             )}

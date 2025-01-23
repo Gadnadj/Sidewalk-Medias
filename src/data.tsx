@@ -4,6 +4,7 @@ import { FiMail } from 'react-icons/fi';
 import { FiMapPin } from 'react-icons/fi';
 import { FiLayout } from 'react-icons/fi';
 import { TiBusinessCard } from 'react-icons/ti';
+import { ReactElement } from 'react';
 
 
 // companies icons
@@ -347,28 +348,28 @@ export const projectData2 = [
 // projects
 export const projectsNav = [
     {
-        name: 'all'
+        name: 'all',
     },
     {
-        name: 'Magazine'
+        name: 'logo',
     },
     {
-        name: 'Logo'
+        name: 'magazine',
     },
     {
-        name: 'Flyer'
+        name: 'flyer',
     },
     {
-        name: 'Post'
+        name: 'post',
     },
     {
-        name: 'Website'
+        name: 'website',
     },
     {
-        name: 'Poster'
+        name: 'poster',
     },
     {
-        name: 'Brochure'
+        name: 'brochure',
     }
 ];
 
@@ -409,42 +410,35 @@ export const skills = [
 ];
 
 // services
-export const services = [
+export interface Service {
+    icon: ReactElement;
+    type: 'logo' | 'businessCard' | 'magazine' | 'flyer' | 'video' | 'website';
+}
+
+export const services: Service[] = [
     {
         icon: <FiLayout />,
-        name: 'Logo',
-        description:
-            'Creation of unique and memorable logos that embody the essence of your brand. A professional design that sets you apart from the competition and remains etched in the minds of your clients.'
+        type: 'logo',
     },
     {
         icon: <TiBusinessCard />,
-        name: 'Business Card',
-        description:
-            'Elegant and impactful business cards that make a strong impression. A carefully crafted design that reflects your professionalism and strengthens your brand image.'
+        type: 'businessCard',
     },
     {
         icon: <FiBookOpen />,
-        name: 'Magazine',
-        description:
-            'Creative and professional magazine layout that captivates your readers. A perfect harmony between text and images for an optimal reading experience.'
+        type: 'magazine',
     },
     {
         icon: <LuFileSpreadsheet />,
-        name: 'Flyer',
-        description:
-            'Design of eye-catching flyers that attract attention and effectively convey your message. A striking design to maximize the impact of your promotional campaigns.'
+        type: 'flyer',
     },
     {
         icon: <IoVideocamOutline />,
-        name: 'Video',
-        description:
-            'Production of dynamic and engaging video content for your social media and communications. Animations that bring your message to life and captivate your audience.'
+        type: 'video',
     },
     {
         icon: <TfiWorld />,
-        name: 'Website',
-        description:
-            'Creation of modern and responsive websites that reflect your identity. An optimized user experience combined with aesthetic design for an effective online presence.'
+        type: 'website',
     }
 ];
 

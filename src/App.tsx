@@ -9,27 +9,32 @@ import Footer from './components/Footer';
 import BackToTopButton from './components/BackToTopButton';
 import Brands from './components/Brands';
 import SectionDivider from './components/SectionDivider';
+import { LanguageProvider } from './context/LanguageContext';
+import LanguageToggle from './components/LanguageToggle';
 
 function App() {
   return (
-    <div className="overflow-x-hidden">
-      <Headers />
-      <Hero />
-      <SectionDivider bgColor="bg-secondary" />
-      <Brands />
-      <SectionDivider />
-      <About />
-      <SectionDivider bgColor="bg-tertiary" />
-      <Skills />
-      <SectionDivider bgColor="bg-tertiary" />
-      <Portofolio />
-      <SectionDivider bgColor="bg-tertiary" />
-      <Services />
-      <SectionDivider />
-      <Contact />
-      <Footer />
-      <BackToTopButton />
-    </div>
+    <LanguageProvider>
+      <div className="overflow-x-hidden">
+        <Headers />
+        <LanguageToggle />
+        <Hero />
+        <SectionDivider bgColor="bg-secondary" />
+        <Brands />
+        <SectionDivider />
+        <About />
+        <SectionDivider bgColor="bg-tertiary" />
+        <Skills />
+        <SectionDivider bgColor="bg-tertiary" />
+        <Portofolio />
+        <SectionDivider bgColor="bg-tertiary" />
+        <Services />
+        <SectionDivider />
+        <Contact />
+        <Footer />
+        <BackToTopButton />
+      </div>
+    </LanguageProvider>
   );
 }
 

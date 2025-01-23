@@ -1,7 +1,23 @@
 import { skills } from '../data';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const Skills = () => {
+    const { language } = useLanguage();
+
+    const getTitle = () => {
+        switch (language) {
+            case 'en':
+                return 'Skills';
+            case 'fr':
+                return 'Compétences';
+            case 'he':
+                return 'כישורים';
+            default:
+                return 'Skills';
+        }
+    };
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -41,7 +57,7 @@ const Skills = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        Skills
+                        {getTitle()}
                     </motion.h2>
                 </div>
                 <motion.div

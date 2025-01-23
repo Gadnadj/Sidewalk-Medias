@@ -1,7 +1,15 @@
 import { services } from '../data';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
+import { Service } from '../data';
+import { ServiceType } from '../translations';
 
 const Services = () => {
+    const { language } = useLanguage();
+    const t = translations[language];
+    const isRTL = language === 'he';
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -32,16 +40,24 @@ const Services = () => {
     };
 
     return (
-        <section id='services' className='section bg-tertiary'>
+        <section 
+            id='services' 
+            className='section bg-tertiary'
+            dir={isRTL ? 'rtl' : 'ltr'}
+        >
             <div className='container mx-auto'>
                 <div className='flex flex-col items-center text-center'>
                     <motion.h2 
-                        className='section-title before:content-services relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-28 before:hidden before:lg:block'
+                        className={`section-title before:content-services relative before:absolute before:opacity-40 before:-top-[2rem] before:hidden before:lg:block ${
+                            language === 'en' ? 'before:-left-[110%]' : 
+                            language === 'fr' ? 'before:-left-[85%]' :
+                            'before:-right-[60%]'
+                        }`}
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        What I do for clients
+                        {t.services.title}
                     </motion.h2>
                     <motion.p 
                         className='subtitle'
@@ -61,7 +77,7 @@ const Services = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    {services.map((service, index) => (
+                    {services.map((service: Service, index) => (
                         <motion.div 
                             className='bg-secondary p-6 rounded-2xl cursor-pointer'
                             key={index}
@@ -80,8 +96,10 @@ const Services = () => {
                             >
                                 {service.icon}
                             </motion.div>
-                            <h4 className='text-xl font-medium mb-2'>{service.name}</h4>
-                            <p>{service.description}</p>
+                            <h4 className='text-xl font-medium mb-2'>
+                                {t.services.services[service.type as ServiceType].title}
+                            </h4>
+                            <p>{t.services.services[service.type as ServiceType].description}</p>
                         </motion.div>
                     ))}
                 </motion.div>

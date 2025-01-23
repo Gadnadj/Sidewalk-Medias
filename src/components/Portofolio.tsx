@@ -1,22 +1,33 @@
 import Projects from './Projects';
 import Reveal from './Reveal';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 const Portofolio = () => {
+    const { language } = useLanguage();
+    const t = translations[language];
+    const isRTL = language === 'he';
+
     return (
         <section
             id='portfolio'
             className='section bg-primary min-h-[1400px]'
+            dir={isRTL ? 'rtl' : 'ltr'}
         >
             <div className='container mx-auto'>
                 <div className='flex flex-col items-center text-center -mb-8'>
                     <motion.h2 
-                        className='section-title before:content-portfolio relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-3/4 before:hidden before:lg:block mb-3'
+                        className={`section-title before:content-portfolio relative before:absolute before:opacity-40 before:-top-[2rem] before:hidden before:lg:block ${
+                            language === 'en' ? 'before:-left-[85%]' : 
+                            language === 'fr' ? 'before:-left-[50%]' :
+                            'before:-right-[30%]'
+                        }`}
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                     >
-                        My latest work
+                        {t.portfolio.title}
                     </motion.h2>
                     <motion.p 
                         className='subtitle mb-8'
@@ -25,9 +36,7 @@ const Portofolio = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        Discover a selection of my creations, ranging from striking logos to elegant magazines and innovative web designs.
-                        Each project reflects my passion for design and my commitment to creating
-                        visual solutions that captivate and communicate effectively.
+                        {t.portfolio.subtitle}
                     </motion.p>
                 </div>
                 <Reveal delay={0.2} width="100%">

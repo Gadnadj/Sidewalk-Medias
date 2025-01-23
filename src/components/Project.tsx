@@ -1,11 +1,22 @@
 import { ItemType } from './Types';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 type Props = {
     item: ItemType;
 }
 
 const Project = ({ item }: Props) => {
+    const { language } = useLanguage();
+    const t = translations[language];
+
+    // Fonction pour obtenir la traduction de la catégorie
+    const getCategoryTranslation = (category: string) => {
+        const categoryKey = category.toLowerCase() as keyof typeof t.portfolio.categories;
+        return t.portfolio.categories[categoryKey] || category;
+    };
+
     return (
         <motion.div
             className='flex flex-col items-center text-center'
@@ -29,7 +40,7 @@ const Project = ({ item }: Props) => {
                         className="text-center px-4"
                     >
                         <h3 className='text-2xl font-bold text-white mb-2'>{item.name}</h3>
-                        <p className='text-accent text-sm'>{item.category}</p>
+                        <p className='text-accent text-sm'>{getCategoryTranslation(item.category)}</p>
                     </motion.div>
                 </div>
             </motion.div>

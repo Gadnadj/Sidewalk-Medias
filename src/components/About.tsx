@@ -1,10 +1,20 @@
 import Image from '../assets/img/about.webp';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 const About = () => {
+    const { language } = useLanguage();
+    const t = translations[language];
+    const isRTL = language === 'he';
+
     return (
-        <section id='about' className='section bg-secondary'>
+        <section 
+            id='about' 
+            className='section bg-secondary'
+            dir={isRTL ? 'rtl' : 'ltr'}
+        >
             <div className='container mx-auto'>
                 <div className='flex flex-col xl:flex-row gap-24'>
                     <motion.div
@@ -12,6 +22,7 @@ const About = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5 }}
+                        className={isRTL ? 'order-2' : ''}
                     >
                         <img
                             className='object-cover h-full w-[556px] md:mx-auto lg:mx-0 rounded-2xl'
@@ -20,7 +31,9 @@ const About = () => {
                         />
                     </motion.div>
                     <motion.div 
-                        className='flex flex-col items-center text-center lg:items-start lg:text-left'
+                        className={`flex flex-col items-center text-center lg:items-start lg:text-left ${
+                            isRTL ? 'lg:items-end lg:text-right order-1' : ''
+                        }`}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -28,23 +41,15 @@ const About = () => {
                     >
                         <div className='flex flex-col'>
                             <motion.h2 
-                                className='text-3xl lg:text-4xl font-medium lg:font-extrabold mb-3 before:content-about relative before:absolute before:opacity-40 before:-top-[2rem] before:hidden before:lg:block'
-                                initial={{ opacity: 0, y: 20 }}
+                                className={`text-3xl lg:text-4xl font-medium lg:font-extrabold mb-3 before:content-about relative before:absolute before:opacity-40 before:-top-[2rem] before:hidden before:lg:block ${
+                                    isRTL ? 'before:-right-[5rem]' : 'before:-left-[5rem]'
+                                }`}
+                                initial={{ opacity: 0, y: -20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ duration: 0.5 }}
                             >
-                                Sidewalk Media
+                                {t.about.title}
                             </motion.h2>
-                            <motion.p 
-                                className='mb-4 text-accent'
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: 0.2 }}
-                            >
-                                Graphic Designer
-                            </motion.p>
                             <motion.hr 
                                 className='mb-8 opacity-5'
                                 initial={{ opacity: 0, width: 0 }}
@@ -59,15 +64,10 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.4 }}
                             >
-                                Passionate about graphic design and visual communication, I create unique and memorable brand identities.
-                                From designing elegant logos to captivating magazine layouts, modern websites, and engaging social media content,
-                                I bring your projects to life with creativity and professionalism. <br /><br />
-                                
-                                My approach combines technical expertise, artistic sensitivity, and a deep understanding of my clients' needs.
-                                Whether you're an established company or an ambitious startup, I am committed to transforming
-                                your ideas into impactful designs that set you apart from the competition.
+                                {t.about.description}<br /><br />
+                                {t.about.description2}
                             </motion.p>
-                            <motion.div>
+                            <motion.div className={isRTL ? 'self-end' : ''}>
                                 <Link
                                     to="contact"
                                     smooth={true}
@@ -84,7 +84,7 @@ const About = () => {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        Contact Me
+                                        {t.about.cta}
                                     </motion.button>
                                 </Link>
                             </motion.div>

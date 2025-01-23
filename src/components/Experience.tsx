@@ -2,28 +2,28 @@ import { motion } from 'framer-motion';
 
 const experiences = [
     {
-        date: "2023 - Present",
-        company: "Freelance",
-        position: "Full Stack Developer",
-        description: "Developed and maintained multiple client websites using React, Node.js, and MongoDB. Implemented responsive designs and modern UI/UX practices. Managed client relationships and project timelines effectively."
+        date: '2023 - Present',
+        company: 'Freelance',
+        position: 'Full Stack Developer',
+        description: 'Developed and maintained multiple client websites using React, Node.js, and MongoDB. Implemented responsive designs and modern UI/UX practices. Managed client relationships and project timelines effectively.'
     },
     {
-        date: "2022 - 2023",
-        company: "Tech Startup XYZ",
-        position: "Frontend Developer",
-        description: "Led the frontend development of a SaaS platform using React and TypeScript. Collaborated with UI/UX designers to implement pixel-perfect designs. Improved website performance by 40%."
+        date: '2022 - 2023',
+        company: 'Tech Startup XYZ',
+        position: 'Frontend Developer',
+        description: 'Led the frontend development of a SaaS platform using React and TypeScript. Collaborated with UI/UX designers to implement pixel-perfect designs. Improved website performance by 40%.'
     },
     {
-        date: "2021 - 2022",
-        company: "Digital Agency ABC",
-        position: "Web Developer",
-        description: "Created custom WordPress themes and plugins for various clients. Worked in an agile team environment. Implemented SEO best practices and optimized website performance."
+        date: '2021 - 2022',
+        company: 'Digital Agency ABC',
+        position: 'Web Developer',
+        description: 'Created custom WordPress themes and plugins for various clients. Worked in an agile team environment. Implemented SEO best practices and optimized website performance.'
     },
     {
-        date: "2020 - 2021",
-        company: "Innovation Labs",
-        position: "Junior Developer",
-        description: "Started as an intern and quickly promoted to Junior Developer. Assisted in developing and maintaining client websites. Learned and implemented modern web development practices."
+        date: '2020 - 2021',
+        company: 'Innovation Labs',
+        position: 'Junior Developer',
+        description: 'Started as an intern and quickly promoted to Junior Developer. Assisted in developing and maintaining client websites. Learned and implemented modern web development practices.'
     }
 ];
 
