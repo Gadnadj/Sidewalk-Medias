@@ -29,7 +29,7 @@ const TestimonialSlider = () => {
                                 <div className='flex flex-col max-w-3xl'>
                                     <h5 className='font-body text-2xl mb-8 italic font-normal'>{item.authorText}</h5>
                                     <div>
-                                        <p className='text-lg text-accent'>{item.authorImg}</p>
+                                        <p className='text-lg text-accent'>{item.authorName}</p>
                                         <p>{item.authorPosition}</p>
                                     </div>
                                 </div>

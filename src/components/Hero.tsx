@@ -40,7 +40,7 @@ const Hero = () => {
                             Download My CV
                         </motion.a>
                     </div>
-tes
+                    
                     {/* right side */}
                     <motion.div 
                         initial={{ opacity: 0, x: 100 }}
