@@ -13,7 +13,7 @@ const Contact = () => {
         e.preventDefault();
         
         try {
-            const response = await fetch('https://formspree.io/f/xwpvkbdq', {
+            const response = await fetch(import.meta.env.VITE_FORMSPREE_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
