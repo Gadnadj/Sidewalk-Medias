@@ -1,7 +1,6 @@
 import { skills } from '../data';
-type Props = {}
 
-const Skills = (props: Props) => {
+const Skills = () => {
     return (
         <section className='bg-tertiary py-12'>
             <div className='container mx-auto'>

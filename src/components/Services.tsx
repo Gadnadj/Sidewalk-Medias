@@ -1,8 +1,6 @@
 import { services } from '../data';
 
-type Props = {}
-
-const Services = (props: Props) => {
+const Services = () => {
   return (
     <section id='services' className='section bg-tertiary'>
       <div className='container mx-auto'>

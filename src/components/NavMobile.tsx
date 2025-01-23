@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { navigation } from '../data';
-import Socials from './Socials';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { li } from 'framer-motion/client';
 
-type Props = {}
-
-const NavMobile = (props: Props) => {
+const NavMobile = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     // framer motion variants

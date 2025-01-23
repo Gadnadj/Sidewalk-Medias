@@ -1,10 +1,9 @@
-import { button } from 'framer-motion/client';
 import { useEffect, useState } from 'react';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
 
-type Props = {}
 
-const BackToTopButton = (props: Props) => {
+
+const BackToTopButton = () => {
     const [show, setShow] = useState<boolean>(false);
 
     useEffect(() => {

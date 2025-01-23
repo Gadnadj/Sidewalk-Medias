@@ -1,9 +1,6 @@
-import React from 'react';
 import WomanImg from '../assets/img/sidewalk.png';
 
-type Props = {}
-
-const Hero = (props: Props) => {
+const Hero = () => {
     return (
         <section
             id='home'

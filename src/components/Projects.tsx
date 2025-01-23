@@ -5,11 +5,7 @@ import Project from './Project';
 import { ItemType } from './Types';
 
 
-
-
-type Props = {}
-
-const Projects = (props: Props) => {
+const Projects = () => {
     const [item, setItem] = useState<ItemType>({ id: '', name: 'all', image: '', category: '' });
     const [projects, setProjects] = useState<ItemType[]>([]);
     const [active, setActive] = useState<number>(0);

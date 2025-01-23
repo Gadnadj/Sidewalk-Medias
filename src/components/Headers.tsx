@@ -4,10 +4,7 @@ import NavBar from './NavBar';
 import NavMobile from './NavMobile';
 import Socials from './Socials';
 
-
-type Props = {}
-
-const Headers = (props: Props) => {
+const Headers = () => {
     const [background, setBackground] = useState<boolean>(false);
 
     useEffect(() => {

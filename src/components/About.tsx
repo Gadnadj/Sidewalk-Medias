@@ -1,8 +1,6 @@
 import Image from '../assets/img/about.webp';
 
-type Props = {}
-
-const About = (props: Props) => {
+const About = () => {
     return (
         <section id='about' className='section bg-secondary'>
             <div className='container mx-auto'>

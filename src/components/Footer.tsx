@@ -2,9 +2,7 @@ import { social } from '../data';
 
 import Logo from '../assets/img/logo.svg';
 
-type Props = {}
-
-const Footer = (props: Props) => {
+const Footer = () => {
     return (
         <footer className='bg-tertiary py-12'>
             <div className='container mx-auto'>

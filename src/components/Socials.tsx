@@ -1,9 +1,7 @@
-import React from 'react';
 import { social } from '../data';
 
-type Props = {}
 
-const Socials = (props: Props) => {
+const Socials = () => {
     return (
         <ul className='flex space-x-6'>
             {social.map((item, index) => (

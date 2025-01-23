@@ -1,10 +1,8 @@
-import React from 'react';
 import { navigation } from '../data';
 import { Link } from 'react-scroll';
 
-type Props = {}
 
-const NavBar = (props: Props) => {
+const NavBar = () => {
     return (
         <nav>
             <ul className='flex space-x-8 capitalize text-[15px]'>

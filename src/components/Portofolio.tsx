@@ -1,10 +1,7 @@
-import React from 'react';
-import Project from './Project';
 import Projects from './Projects';
 
-type Props = {}
 
-const Portofolio = (props: Props) => {
+const Portofolio = () => {
     return (
         <section
             id='portfolio'

@@ -8,7 +8,7 @@ import Services from './components/Services';
 import Contact from './Contact';
 import Footer from './components/Footer';
 import BackToTopButton from './components/BackToTopButton';
-// import Testimonials from './components/Testimonials';
+import Testimonials from './components/Testimonials';
 
 function App() {
 
@@ -22,7 +22,7 @@ function App() {
       <Skills />
       <Portofolio />
       <Services />
-      {/* <Testimonials /> */}
+      <Testimonials />
       <Contact />
       <Footer />
       <BackToTopButton />
