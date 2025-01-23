@@ -1,5 +1,7 @@
 import { FormEvent, useState } from 'react';
 import { contact } from './data';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -22,18 +24,46 @@ const Contact = () => {
             });
 
             if (response.ok) {
-                alert('Message sent successfully!');
+                toast.success('🎉 Message sent successfully!', {
+                    position: 'top-right',
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'dark'
+                });
                 setFormData({ name: '', email: '', subject: '', message: '' });
             } else {
-                alert('Failed to send message. Please try again.');
+                toast.error('❌ Failed to send message. Please try again.', {
+                    position: 'top-right',
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: 'dark'
+                });
             }
         } catch (error) {
-            alert('An error occurred. Please try again later.');
+            toast.error('🔥 Network error. Please check your connection and try again.', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark'
+            });
         }
     };
 
     return (
         <section className='section bg-primary' id='contact'>
+            <ToastContainer />
             <div className='container mx-auto'>
                 <div className='flex flex-col items-center text-center'>
                     <h2 className='section-title before:content-contact relative before:absolute before:opacity-40 before:-top-7 before:-left-40 before:hidden before:lg:block'>
