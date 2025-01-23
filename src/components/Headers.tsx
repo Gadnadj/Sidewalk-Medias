@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Logo from '../assets/img/logo.svg';
 import NavBar from './NavBar';
 import NavMobile from './NavMobile';
 import Socials from './Socials';
@@ -28,8 +27,12 @@ const Headers = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
+                    className="hover:text-accent transition-all duration-300"
                 >
-                    <img src={Logo} alt="" />
+                    <h2 className="text-3xl lg:text-3xl font-extrabold tracking-[2px] uppercase">
+                        <span className="text-accent font-black">Yael</span>
+                        <span className="font-light"> Nadjar</span>
+                    </h2>
                 </motion.a>
 
                 {/* navbar */}

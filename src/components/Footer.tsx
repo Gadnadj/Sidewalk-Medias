@@ -1,5 +1,4 @@
 import { social } from '../data';
-import Logo from '../assets/img/logo.svg';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
@@ -38,7 +37,10 @@ const Footer = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                        <img src={Logo} alt="" />
+                        <h2 className="text-2xl lg:text-3xl font-extrabold tracking-[2px] uppercase">
+                            <span className="text-accent font-black">Yael</span>
+                            <span className="font-light"> Nadjar</span>
+                        </h2>
                     </motion.div>
                 </div>
             </div>
