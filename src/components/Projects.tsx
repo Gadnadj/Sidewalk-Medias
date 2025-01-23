@@ -3,7 +3,7 @@ import { projectsData } from '../data';
 import { projectsNav } from '../data';
 import Project from './Project';
 import { ItemType } from './Types';
-
+import { motion } from 'framer-motion';
 
 const Projects = () => {
     const [item, setItem] = useState<ItemType>({ id: '', name: 'all', image: '', category: '' });
@@ -31,24 +31,41 @@ const Projects = () => {
     return (
         <div>
             {/* nav */}
-            <nav className='mt-12 mb-12 max-w-xl mx-auto'>
+            <motion.nav 
+                className='mt-12 mb-12 max-w-xl mx-auto'
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+            >
                 <ul className='flex flex-col md:flex-row justify-evenly items-center text-white'>
                     {projectsNav.map((item, index) => (
-                        <li
+                        <motion.li
+                            key={index}
                             className={`${active === index ? 'active' : ''} cursor-pointer capitalize m-4`}
-                            onClick={(e) => handleClick(e, index)}>{item.name}</li>
+                            onClick={(e) => handleClick(e, index)}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            {item.name}
+                        </motion.li>
                     ))}
                 </ul>
-            </nav>
+            </motion.nav>
 
             {/* projects grid */}
-            <section className='grid lg:grid-cols-3 lg:gap-x-8 gap-y-12 lg:gap-y-8 '>
-                {
-                    projects.map((item) => (
-                        <Project item={item} key={item.id} />
-                    ))
-                }
-            </section>
+            <motion.section 
+                className='grid lg:grid-cols-3 lg:gap-x-8 gap-y-12 lg:gap-y-8'
+                layout
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.5 }}
+            >
+                {projects.map((item) => (
+                    <Project item={item} key={item.id} />
+                ))}
+            </motion.section>
         </div>
     );
 };

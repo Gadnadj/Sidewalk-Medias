@@ -3,13 +3,13 @@ import { ReactNode } from 'react';
 
 type Props = {
     children: ReactNode;
-    width?: "fit-content" | "100%";
+    width?: 'fit-content' | '100%';
     delay?: number;
 };
 
-const Reveal = ({ children, width = "fit-content", delay = 0 }: Props) => {
+const Reveal = ({ children, width = 'fit-content', delay = 0 }: Props) => {
     return (
-        <div style={{ width, overflow: "hidden" }}>
+        <div style={{ width, overflow: 'hidden' }}>
             <motion.div
                 variants={{
                     hidden: { opacity: 0, y: 75 },
