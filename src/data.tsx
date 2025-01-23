@@ -401,7 +401,7 @@ export const skills = [
     },
     {
         image: AfterEffect,
-        name: 'AfterEffects'
+        name: 'After Effects'
     },
     {
         image: CapCut,
