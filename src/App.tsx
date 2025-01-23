@@ -17,13 +17,13 @@ function App() {
     <div>
       <Headers />
       <Hero />
-      <SectionDivider bgColor="bg-primary" />
+      <SectionDivider bgColor="bg-secondary" />
       <Brands />
       <SectionDivider />
       <About />
       <SectionDivider bgColor="bg-tertiary" />
       <Skills />
-      <SectionDivider />
+      <SectionDivider bgColor="bg-tertiary" />
       <Portofolio />
       <SectionDivider bgColor="bg-tertiary" />
       <Services />
