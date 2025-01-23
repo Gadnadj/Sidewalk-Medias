@@ -348,28 +348,28 @@ export const projectData2 = [
 // projects
 export const projectsNav = [
     {
-        name: 'all',
+        name: 'all'
     },
     {
-        name: 'logo',
+        name: 'logo'
     },
     {
-        name: 'magazine',
+        name: 'magazine'
     },
     {
-        name: 'flyer',
+        name: 'flyer'
     },
     {
-        name: 'post',
+        name: 'post'
     },
     {
-        name: 'website',
+        name: 'website'
     },
     {
-        name: 'poster',
+        name: 'poster'
     },
     {
-        name: 'brochure',
+        name: 'brochure'
     }
 ];
 
@@ -418,27 +418,27 @@ export interface Service {
 export const services: Service[] = [
     {
         icon: <FiLayout />,
-        type: 'logo',
+        type: 'logo'
     },
     {
         icon: <TiBusinessCard />,
-        type: 'businessCard',
+        type: 'businessCard'
     },
     {
         icon: <FiBookOpen />,
-        type: 'magazine',
+        type: 'magazine'
     },
     {
         icon: <LuFileSpreadsheet />,
-        type: 'flyer',
+        type: 'flyer'
     },
     {
         icon: <IoVideocamOutline />,
-        type: 'video',
+        type: 'video'
     },
     {
         icon: <TfiWorld />,
-        type: 'website',
+        type: 'website'
     }
 ];
 
