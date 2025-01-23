@@ -1,7 +1,7 @@
 import WomanImg from '../assets/img/sidewalk.png';
 import { motion } from 'framer-motion';
 import Reveal from './Reveal';
-import CV from '../assets/Gad Nadjar.pdf';
+import { Link } from 'react-scroll';
 
 const Hero = () => {
 
@@ -15,7 +15,7 @@ const Hero = () => {
                     {/* left side */}
                     <div className="flex-1 flex flex-col items-center lg:items-start">
                         <Reveal>
-                            <p className='text-lg text-accent mb-[22px]'>Hey, I'm Yael 👋</p>
+                            <p className='text-lg text-accent mb-[22px]'>Hey, We are Sidewalk Media 👋</p>
                         </Reveal>
                         <Reveal delay={0.2}>
                             <h1 className='text-4xl leading-[44px] md:text-5xl md:leading-tight lg:text-7xl lg:leading-[1.2] font-bold md:tracking-[-2px] text-center lg:text-start'>
@@ -27,20 +27,26 @@ const Hero = () => {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                             </p>
                         </Reveal>
-                        <motion.a 
-                            href={CV}
-                            download="Yael_Nadjar_CV.pdf"
-                            className='btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all'
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.6, duration: 0.5 }}
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                        <Link
+                            to="contact"
+                            smooth={true}
+                            duration={500}
+                            offset={-70}
+                            className="inline-block"
                         >
-                            Download My CV
-                        </motion.a>
+                            <motion.button 
+                                className='btn btn-md bg-accent hover:bg-accent-hover md:btn-lg transition-all'
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.6, duration: 0.5 }}
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                            >
+                                Contact Me
+                            </motion.button>
+                        </Link>
                     </div>
-                    
+
                     {/* right side */}
                     <motion.div 
                         initial={{ opacity: 0, x: 100 }}

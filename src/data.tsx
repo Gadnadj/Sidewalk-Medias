@@ -1,7 +1,5 @@
-import { FiYoutube } from 'react-icons/fi';
+import { FiFacebook, FiLinkedin, FiTwitter } from 'react-icons/fi';
 import { FiInstagram } from 'react-icons/fi';
-import { FiGithub } from 'react-icons/fi';
-import { FiDribbble } from 'react-icons/fi';
 import { FiMail } from 'react-icons/fi';
 import { FiMapPin } from 'react-icons/fi';
 import { FiLayout } from 'react-icons/fi';
@@ -58,32 +56,36 @@ export const navigation = [
         name: 'services',
         href: 'services'
     },
-    {
-        name: 'testimonials',
-        href: 'testimonials'
-    },
+    // {
+    //     name: 'testimonials',
+    //     href: 'testimonials'
+    // },
     {
         name: 'contact',
         href: 'contact'
     }
+    // {
+    //     name: 'experience',
+    //     href: 'experience'
+    // }
 ];
 
 // social
 export const social = [
     {
-        icon: <FiYoutube />,
-        href: ''
-    },
-    {
         icon: <FiInstagram />,
-        href: ''
+        href: 'https://www.instagram.com/sidewalkmedias/'
     },
     {
-        icon: <FiGithub />,
-        href: ''
+        icon: <FiFacebook />,
+        href: 'https://www.facebook.com/SidewalkMedias'
     },
     {
-        icon: <FiDribbble />,
+        icon: <FiLinkedin />,
+        href: 'https://www.linkedin.com/in/sidewalkmedias/'
+    },
+    {
+        icon: <FiTwitter />,
         href: ''
     }
 ];
@@ -237,21 +239,21 @@ export const testimonials = [
     {
         authorImg: TestiImage1,
         authorText:
-            'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+            'Love the simplicity of the service and the prompt customer support. We cant imagine working without it.',
         authorName: 'Olivia Doe',
         authorPosition: 'Head of Design, Google'
     },
     {
         authorImg: TestiImage2,
         authorText:
-            'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+            'Love the simplicity of the service and the prompt customer support. We cant imagine working without it.',
         authorName: 'Olivia Doe',
         authorPosition: 'Head of Design, Google'
     },
     {
         authorImg: TestiImage3,
         authorText:
-            'Love the simplicity of the service and the prompt customer support. We can’t imagine working without it.',
+            'Love the simplicity of the service and the prompt customer support. We cant imagine working without it.',
         authorName: 'Olivia Doe',
         authorPosition: 'Head of Design, Google'
     }

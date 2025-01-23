@@ -38,8 +38,8 @@ const Footer = () => {
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
                         <h2 className="text-2xl lg:text-3xl font-extrabold tracking-[2px] uppercase">
-                            <span className="text-accent font-black">Yael</span>
-                            <span className="font-light"> Nadjar</span>
+                            <span className="text-accent font-black">Sidewalk</span>
+                            <span className="font-light"> Media</span>
                         </h2>
                     </motion.div>
                 </div>

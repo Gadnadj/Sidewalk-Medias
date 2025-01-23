@@ -34,7 +34,7 @@ const About = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5 }}
                             >
-                                Yael Nadjar
+                                Sidewalk Media
                             </motion.h2>
                             <motion.p 
                                 className='mb-4 text-accent'

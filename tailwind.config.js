@@ -23,7 +23,8 @@ module.exports = {
         portfolio: 'url("/src/assets/img/outline-text/portfolio.svg")',
         services: 'url("/src/assets/img/outline-text/services.svg")',
         testimonials: 'url("/src/assets/img/outline-text/testimonials.svg")',
-        contact: 'url("/src/assets/img/outline-text/contact.svg")'
+        contact: 'url("/src/assets/img/outline-text/contact.svg")',
+        experience: '"Experience"'
       },
       colors: {
         primary: '#050402',

@@ -30,8 +30,8 @@ const Headers = () => {
                     className="hover:text-accent transition-all duration-300"
                 >
                     <h2 className="text-3xl lg:text-3xl font-extrabold tracking-[2px] uppercase">
-                        <span className="text-accent font-black">Yael</span>
-                        <span className="font-light"> Nadjar</span>
+                        <span className="text-accent font-black">Sidewalk</span>
+                        <span className="font-light"> Media</span>
                     </h2>
                 </motion.a>
 
