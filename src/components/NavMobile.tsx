@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { navigation } from '../data';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
@@ -9,6 +9,20 @@ const NavMobile = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const { language } = useLanguage();
     const t = translations[language];
+
+    // Gestion du scroll lock
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+
+        // Cleanup lors du démontage du composant
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [isOpen]);
 
     // framer motion variants
     const circleVariants = {
@@ -40,7 +54,7 @@ const NavMobile = () => {
     return (
         <nav className='relative'>
             {/* menu icon */}
-            <div onClick={() => setIsOpen(true)} className='cursor-pointer text-white'>
+            <div onClick={() => setIsOpen(true)} className='cursor-pointer text-white z-[9001]'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25" />
                 </svg>
@@ -51,7 +65,7 @@ const NavMobile = () => {
                 variants={circleVariants}
                 initial='hidden'
                 animate={isOpen ? 'visible' : 'hidden'}
-                className='w-4 h-4 rounded-full bg-accent fixed top-0 right-0'>
+                className='w-4 h-4 rounded-full bg-secondary fixed top-0 right-0 z-[9002]'>
             </motion.div>
 
             {/* menu */}
@@ -59,9 +73,9 @@ const NavMobile = () => {
                 variants={ulVariants}
                 initial='hidden'
                 animate={isOpen ? 'visible' : 'hidden'}
-                className={`${isOpen ? 'right-0' : '-right-full'} fixed top-0 bottom-0 w-full flex flex-col justify-center items-center transition-all duration-300 overflow-hidden z-[1000]`}
+                className={`${isOpen ? 'right-0' : '-right-full'} fixed top-0 bottom-0 w-full flex flex-col justify-center items-center transition-all duration-300 overflow-hidden z-[9003] bg-secondary`}
             >
-                <div onClick={() => setIsOpen(false)} className="cursor-pointer absolute top-8 right-8">
+                <div onClick={() => setIsOpen(false)} className="cursor-pointer absolute top-8 right-8 text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                     </svg>
@@ -73,7 +87,7 @@ const NavMobile = () => {
                             smooth={true}
                             duration={500}
                             offset={-70}
-                            className='text-xl cursor-pointer capitalize'
+                            className='text-xl cursor-pointer capitalize text-white hover:opacity-70 transition-all'
                             onClick={() => setIsOpen(false)}
                         >
                             {t.nav[item.name as keyof typeof t.nav]}
