@@ -1,15 +1,17 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState, useEffect } from 'react';
 import { contact } from './data';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { motion } from 'framer-motion';
 import { useLanguage } from './context/LanguageContext';
 import { translations } from './translations';
+import ShootingStars from './components/ShootingStars';
 
 const Contact = () => {
     const { language } = useLanguage();
     const t = translations[language];
     const isRTL = language === 'he';
+    const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const [formData, setFormData] = useState({
         name: '',
@@ -48,15 +50,18 @@ const Contact = () => {
 
     return (
         <section 
-            className='section bg-primary' 
-            id='contact'
+            id='contact' 
+            className='section bg-primary relative'
             dir={isRTL ? 'rtl' : 'ltr'}
         >
-            <div className='container mx-auto'>
+            <ShootingStars containerId="contact-particles" />
+            <div className='container mx-auto relative z-10'>
                 <div className='flex flex-col items-center text-center'>
                     <motion.h2 
-                        className={`section-title before:content-contact relative before:absolute before:opacity-40 before:-top-7 before:hidden before:lg:block ${
-                            isRTL ? 'before:-right-40' : 'before:-left-40'
+                        className={`section-title before:content-contact relative before:absolute before:opacity-40 before:-top-7 before:-left-40 before:hidden before:lg:block ${
+                            language === 'en' ? 'before:-left-40' : 
+                            language === 'fr' ? 'before:-left-[60%]' :
+                            'before:-right-[30%]'
                         }`}
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}

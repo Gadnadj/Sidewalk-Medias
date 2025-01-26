@@ -21,7 +21,7 @@ const Hero = () => {
         >
             <ShootingStars containerId="hero-particles" />
             <LanguageToggle />
-            <div className="container mx-auto h-full">
+            <div className="container mx-auto h-full relative z-[100]">
                 <div className="flex items-center h-full pt-8">
                     {/* left side */}
                     <div className={`flex-1 flex flex-col items-center ${isRTL ? 'lg:items-end' : 'lg:items-start'}`}>

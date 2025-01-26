@@ -61,7 +61,7 @@ const ShootingStars = ({ containerId = 'particles-container' }: ShootingStarsPro
     return (
         <div 
             id={containerId}
-            className="absolute top-0 left-0 w-full h-full pointer-events-none z-10"
+            className="absolute top-0 left-0 w-full h-full pointer-events-none z-[1]"
             style={{ background: 'transparent' }}
         />
     );
