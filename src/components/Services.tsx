@@ -48,10 +48,10 @@ const Services = () => {
             <div className='container mx-auto'>
                 <div className='flex flex-col items-center text-center'>
                     <motion.h2 
-                        className={`section-title before:content-services relative before:absolute before:opacity-40 before:-top-[2rem] before:hidden before:lg:block ${
+                        className={`section-title before:content-services relative before:absolute before:opacity-40 before:-top-[2rem] before:-left-38 before:hidden before:lg:block ${
                             language === 'en' ? 'before:-left-[110%]' : 
-                            language === 'fr' ? 'before:-left-[85%]' :
-                            'before:-right-[60%]'
+                            language === 'fr' ? 'before:-left-[62%]' :
+                            'before:-right-[67%]'
                         }`}
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -66,7 +66,12 @@ const Services = () => {
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
                     >
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        {language === 'en' ? 
+                            'Creative and tailored solutions to bring your ideas to life and strengthen your brand identity. Discover our professional services designed to meet your needs.' :
+                        language === 'fr' ?
+                            "Des solutions créatives et sur mesure pour donner vie à vos idées et renforcer l'identité de votre marque. Découvrez nos services professionnels adaptés à vos besoins." :
+                            'פתרונות יצירתיים ומותאמים אישית להחיות את הרעיונות שלכם ולחזק את הזהות של המותג שלכם. גלו את השירותים המקצועיים שלנו שמותאמים לצרכים שלכם.'
+                        }
                     </motion.p>
                 </div>
 

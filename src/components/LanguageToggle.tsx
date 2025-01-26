@@ -18,7 +18,7 @@ const LanguageToggle = () => {
     return (
         <motion.button
             onClick={toggleLanguage}
-            className="absolute top-32 right-4 bg-accent hover:bg-accent-hover text-white w-12 h-12 rounded-md flex items-center justify-center z-[400]"
+            className="absolute top-24 right-4 bg-accent hover:bg-accent-hover text-white w-12 h-12 rounded-md flex items-center justify-center z-[9004]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
         >

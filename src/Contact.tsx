@@ -60,8 +60,8 @@ const Contact = () => {
                     <motion.h2 
                         className={`section-title before:content-contact relative before:absolute before:opacity-40 before:-top-7 before:-left-40 before:hidden before:lg:block ${
                             language === 'en' ? 'before:-left-40' : 
-                            language === 'fr' ? 'before:-left-[60%]' :
-                            'before:-right-[30%]'
+                            language === 'fr' ? 'before:-left-[46%]' :
+                            'before:-right-[140%]'
                         }`}
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}

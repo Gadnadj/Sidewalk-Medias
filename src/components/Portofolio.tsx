@@ -19,8 +19,8 @@ const Portofolio = () => {
                 <div className='flex flex-col items-center text-center -mb-8'>
                     <motion.h2 
                         className={`section-title before:content-portfolio relative before:absolute before:opacity-40 before:-top-[2rem] before:hidden before:lg:block ${
-                            language === 'en' ? 'before:-left-[85%]' : 
-                            language === 'fr' ? 'before:-left-[50%]' :
+                            language === 'en' ? 'before:-left-[70%]' : 
+                            language === 'fr' ? 'before:-left-[32%]' :
                             'before:-right-[30%]'
                         }`}
                         initial={{ opacity: 0, y: -20 }}
