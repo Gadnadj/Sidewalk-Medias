@@ -64,7 +64,7 @@ const Skills = () => {
                             className='relative group'
                         >
                             <motion.div 
-                                className='bg-secondary rounded-xl p-4 h-[120px] flex flex-col items-center justify-center transition-all duration-300 group-hover:bg-accent/10 group-hover:shadow-[0_0_20px_rgba(172,107,52,0.4)] group-hover:-translate-y-1'
+                                className='bg-secondary rounded-xl p-4 h-[140px] flex flex-col items-center justify-center transition-all duration-300 group-hover:bg-accent/10 group-hover:shadow-[0_0_20px_rgba(172,107,52,0.4)] group-hover:-translate-y-1'
                                 whileHover={{ 
                                     y: -5,
                                     transition: { type: 'spring', stiffness: 300 }
@@ -72,7 +72,7 @@ const Skills = () => {
                             >
                                 {/* Image container */}
                                 <motion.div
-                                    className='relative w-12 h-12 mb-2'
+                                    className='relative w-12 h-12 mb-3'
                                     whileHover={{ 
                                         scale: 1.1,
                                         rotate: [0, -5, 5, 0],
@@ -88,7 +88,7 @@ const Skills = () => {
 
                                 {/* Skill name */}
                                 <motion.h3 
-                                    className='text-sm font-medium text-center text-white group-hover:text-accent line-clamp-2 transition-all duration-300'
+                                    className='text-sm font-medium text-center text-white group-hover:text-accent transition-all duration-300'
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: 0.2 }}
