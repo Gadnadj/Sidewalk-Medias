@@ -41,6 +41,25 @@
   .active {
     @apply text-accent;
   }
+
+  /* Styles RTL spécifiques */
+  [dir="rtl"] .input {
+    @apply pr-6 pl-0;
+  }
+
+  [dir="rtl"] .input::placeholder {
+    direction: rtl !important;
+    text-align: right !important;
+  }
+
+  [dir="rtl"] .textarea {
+    @apply pr-6 pl-0;
+  }
+
+  [dir="rtl"] .textarea::placeholder {
+    direction: rtl !important;
+    text-align: right !important;
+  }
 }
 
 @keyframes float {
@@ -64,4 +83,23 @@
   pointer-events: none;
   --distance: 100px;
   transform-origin: center;
+}
+
+/* Styles pour les inputs RTL */
+.rtl-input {
+  text-align: right;
+}
+
+.rtl-input::placeholder {
+  text-align: right;
+  direction: rtl;
+}
+
+.ltr-input {
+  text-align: left;
+}
+
+.ltr-input::placeholder {
+  text-align: left;
+  direction: ltr;
 }

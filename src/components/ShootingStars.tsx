@@ -21,14 +21,14 @@ const ShootingStars = ({ containerId = 'particles-container' }: ShootingStarsPro
             
             // Opacité aléatoire plus prononcée
             particle.style.opacity = (Math.random() * 0.7 + 0.3).toString();
-            particle.style.backgroundColor = 'gold';
+            particle.style.backgroundColor = 'white';
 
             // Direction aléatoire
             const angle = Math.random() * 180; // Angle entre 0 et 180 degrés
             particle.style.setProperty('--angle', `${angle}deg`);
 
             // Animation plus rapide et plus variée
-            particle.style.animationDuration = `${Math.random() * 8 + 5}s`;
+            particle.style.animationDuration = `${Math.random() * 15 + 5}s`;
             particle.style.animationDelay = `-${Math.random() * 5}s`;
 
             document.getElementById(containerId)?.appendChild(particle);

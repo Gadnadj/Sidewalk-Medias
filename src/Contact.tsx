@@ -121,7 +121,7 @@ const Contact = () => {
                     >
                         <div className='flex gap-8'>
                             <input
-                                className='input'
+                                className="input"
                                 type='text'
                                 placeholder={t.contact.form.name}
                                 value={formData.name}
@@ -129,7 +129,7 @@ const Contact = () => {
                                 required
                             />
                             <input
-                                className='input'
+                                className="input"
                                 type='email'
                                 placeholder={t.contact.form.email}
                                 value={formData.email}
@@ -138,7 +138,7 @@ const Contact = () => {
                             />
                         </div>
                         <input
-                            className='input'
+                            className="input"
                             type='text'
                             placeholder={t.contact.form.subject}
                             value={formData.subject}
@@ -146,7 +146,7 @@ const Contact = () => {
                             required
                         />
                         <textarea
-                            className='textarea'
+                            className="textarea"
                             placeholder={t.contact.form.message}
                             value={formData.message}
                             onChange={(e) => setFormData({...formData, message: e.target.value})}
