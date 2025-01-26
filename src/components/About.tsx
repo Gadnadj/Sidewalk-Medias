@@ -1,4 +1,3 @@
-import Image from '../assets/img/about.webp';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import { useLanguage } from '../context/LanguageContext';
