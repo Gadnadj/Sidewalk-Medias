@@ -5,6 +5,7 @@ import { Link } from 'react-scroll';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 import LanguageToggle from './LanguageToggle';
+import ShootingStars from './ShootingStars';
 
 const Hero = () => {
     const { language } = useLanguage();
@@ -18,6 +19,7 @@ const Hero = () => {
             className='lg:h-[85vh] flex items-center bg-primary lg:bg-cover lg:bg-center lg:bg-no-repeat py-32 lg:py-0 overflow-hidden relative'
             dir={isRTL ? 'rtl' : 'ltr'}
         >
+            <ShootingStars containerId="hero-particles" />
             <LanguageToggle />
             <div className="container mx-auto h-full">
                 <div className="flex items-center h-full pt-8">

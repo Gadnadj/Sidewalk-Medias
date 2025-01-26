@@ -100,8 +100,10 @@ export const translations = {
                     description: 'Serving clients worldwide'
                 }
             }
+        },
+        skills: {
+            title: 'Skills'
         }
-        // ... autres traductions
     },
     fr: {
         nav: {
@@ -193,8 +195,10 @@ export const translations = {
                     description: 'Au service des clients du monde entier'
                 }
             }
+        },
+        skills: {
+            title: 'Compétences'
         }
-        // ... autres traductions
     },
     he: {
         nav: {
@@ -287,7 +291,9 @@ export const translations = {
                     description: 'משרת לקוחות בכל העולם'
                 }
             }
+        },
+        skills: {
+            title: 'כישורים'
         }
-        // ... autres traductions
     }
 }; 

@@ -42,3 +42,26 @@
     @apply text-accent;
   }
 }
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(var(--angle));
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(var(--angle)) translateX(var(--distance));
+    opacity: 0;
+  }
+}
+
+.floating-particle {
+  position: absolute;
+  animation: float linear infinite;
+  border-radius: 50%;
+  pointer-events: none;
+  --distance: 100px;
+  transform-origin: center;
+}
