@@ -19,9 +19,8 @@ function App() {
         <Headers />
         <LanguageToggle />
         <Hero />
-        <SectionDivider bgColor="bg-tertiary" />
+        <SectionDivider bgColor="bg-primary" />
         <Brands />
-        <SectionDivider />
         <About />
         <SectionDivider bgColor="bg-secondary" />
         <Skills />

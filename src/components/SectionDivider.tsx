@@ -17,7 +17,7 @@ const SectionDivider = ({ bgColor = 'bg-secondary' }: Props) => {
                 <motion.div 
                     className="w-[90%] h-[2px] bg-accent/20"
                     initial={{ width: 0 }}
-                    whileInView={{ width: '90%' }}
+                    whileInView={{ width: '100%' }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.5 }}
                 >
