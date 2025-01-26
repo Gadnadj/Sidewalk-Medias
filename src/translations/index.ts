@@ -167,7 +167,7 @@ export const translations = {
                     description: 'Production de contenus vidéo dynamiques et engageants pour vos réseaux sociaux et communications. Des animations qui donnent vie à votre message et captivent votre audience.'
                 },
                 website: {
-                    title: 'Site Web',
+                    title: 'Website',
                     description: 'Création de sites web modernes et responsifs qui reflètent votre identité. Une expérience utilisateur optimisée combinée à un design esthétique pour une présence en ligne efficace.'
                 }
             }
