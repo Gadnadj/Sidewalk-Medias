@@ -473,7 +473,7 @@ export const contact = [
         icon: <FiMail />,
         title: 'Have a question?',
         subtitle: 'I am here to help you.',
-        description: 'sidewalk.media@gmail.com'
+        description: 'sidewalkmkt@gmail.com'
     },
     {
         icon: <FiMapPin />,
