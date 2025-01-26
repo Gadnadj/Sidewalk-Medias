@@ -24,11 +24,6 @@ const About = () => {
                         transition={{ duration: 0.5 }}
                         className={isRTL ? 'order-2' : ''}
                     >
-                        <img
-                            className='object-cover h-full w-[556px] md:mx-auto lg:mx-0 rounded-2xl'
-                            src={Image}
-                            alt=""
-                        />
                     </motion.div>
                     <motion.div 
                         className={`flex flex-col items-center text-center lg:items-start lg:text-left ${
