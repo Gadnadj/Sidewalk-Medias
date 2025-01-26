@@ -19,17 +19,17 @@ function App() {
         <Headers />
         <LanguageToggle />
         <Hero />
-        <SectionDivider bgColor="bg-secondary" />
+        <SectionDivider bgColor="bg-tertiary" />
         <Brands />
         <SectionDivider />
         <About />
-        <SectionDivider bgColor="bg-tertiary" />
+        <SectionDivider bgColor="bg-secondary" />
         <Skills />
-        <SectionDivider bgColor="bg-tertiary" />
+        <SectionDivider bgColor="bg-secondary" />
         <Portofolio />
         <SectionDivider bgColor="bg-tertiary" />
         <Services />
-        <SectionDivider />
+        <SectionDivider bgColor="bg-tertiary"/>
         <Contact />
         <Footer />
         <BackToTopButton />
