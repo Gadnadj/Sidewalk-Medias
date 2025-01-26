@@ -1,4 +1,4 @@
-import { FormEvent, useState, useEffect } from 'react';
+import { FormEvent, useState } from 'react';
 import { contact } from './data';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,7 +11,7 @@ const Contact = () => {
     const { language } = useLanguage();
     const t = translations[language];
     const isRTL = language === 'he';
-    const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    // const [formStatus, setFormStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const [formData, setFormData] = useState({
         name: '',
