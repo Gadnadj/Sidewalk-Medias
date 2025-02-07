@@ -1,0 +1,21 @@
+{
+  "name": "Sidewalk Media",
+  "short_name": "Sidewalk",
+  "description": "Sidewalk Media - Creative Design Agency",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050402",
+  "theme_color": "#ac6b34",
+  "icons": [
+    {
+      "src": "sidewalk.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "sidewalk.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 
