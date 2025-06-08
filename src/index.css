@@ -103,3 +103,7 @@
   text-align: left;
   direction: ltr;
 }
+
+.nav-mobile-open .language-toggle-btn {
+  display: none !important;
+}

@@ -14,13 +14,16 @@ const NavMobile = () => {
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
+            document.body.classList.add('nav-mobile-open');
         } else {
             document.body.style.overflow = 'unset';
+            document.body.classList.remove('nav-mobile-open');
         }
 
         // Cleanup lors du démontage du composant
         return () => {
             document.body.style.overflow = 'unset';
+            document.body.classList.remove('nav-mobile-open');
         };
     }, [isOpen]);
 
