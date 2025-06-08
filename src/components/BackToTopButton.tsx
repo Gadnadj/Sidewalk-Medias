@@ -19,7 +19,7 @@ const BackToTopButton = () => {
     const handleScroll = useCallback(
         debounce(() => {
             setShow(window.scrollY > 600);
-        }, 100),
+        }, 150),
         []
     );
 
