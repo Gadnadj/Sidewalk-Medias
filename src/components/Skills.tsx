@@ -67,7 +67,7 @@ const Skills = () => {
                                 className='bg-secondary rounded-xl p-4 h-[140px] flex flex-col items-center justify-center transition-all duration-300 group-hover:bg-accent/10 group-hover:shadow-[0_0_20px_rgba(172,107,52,0.4)] group-hover:-translate-y-1'
                                 whileHover={{ 
                                     y: -5,
-                                    transition: { type: 'spring', stiffness: 300 }
+                                    transition: { type: 'spring', stiffness: 400, damping: 20, duration: 0.1 }
                                 }}
                             >
                                 {/* Image container */}
@@ -91,7 +91,7 @@ const Skills = () => {
                                     className='text-sm font-medium text-center text-white group-hover:text-accent transition-all duration-300'
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.2 }}
+                                    transition={{ duration: 0.2 }}
                                 >
                                     {item.name}
                                 </motion.h3>
