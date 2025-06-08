@@ -1,16 +1,32 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
-
+const debounce = (func: Function, wait: number) => {
+    let timeout: NodeJS.Timeout;
+    return function executedFunction(...args: any[]) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};
 
 const BackToTopButton = () => {
     const [show, setShow] = useState<boolean>(false);
 
+    const handleScroll = useCallback(
+        debounce(() => {
+            setShow(window.scrollY > 600);
+        }, 100),
+        []
+    );
+
     useEffect(() => {
-        window.addEventListener('scroll', () => {
-            return window.scrollY > 600 ? setShow(true) : setShow(false);
-        });
-    });
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [handleScroll]);
 
     const scrollToTop = () => {
         scroll.scrollToTop();

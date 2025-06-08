@@ -46,6 +46,7 @@ const Brands = () => {
                         <img
                             src={item.img}
                             alt=""
+                            loading="lazy"
                             className={`${
                                 index === 0 
                                     ? 'h-8 w-8 sm:h-12 sm:w-12 md:h-20 md:w-20' 

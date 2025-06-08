@@ -12,7 +12,6 @@ const Hero = () => {
     const t = translations[language];
     const isRTL = language === 'he';
 
-    console.log(import.meta.env.BASE_URL);
     return (
         <section
             id='home'
