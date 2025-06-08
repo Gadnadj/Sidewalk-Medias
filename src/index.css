@@ -107,3 +107,7 @@
 .nav-mobile-open .language-toggle-btn {
   display: none !important;
 }
+
+.nav-mobile-open .back-to-top-btn {
+  display: none !important;
+}
