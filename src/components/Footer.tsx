@@ -44,7 +44,7 @@ const Footer = () => {
                     >
                         <h2 className="text-2xl lg:text-3xl font-extrabold tracking-[2px] uppercase">
                             <span className="text-accent font-black">Sidewalk</span>
-                            <span className="font-light"> Media</span>
+                            <span className="font-light"> Medias</span>
                         </h2>
                     </motion.div>
                 </div>
