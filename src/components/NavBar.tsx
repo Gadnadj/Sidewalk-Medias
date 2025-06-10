@@ -2,6 +2,7 @@ import { navigation } from '../data';
 import { Link } from 'react-scroll';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
+import { memo } from 'react';
 
 const NavBar = () => {
     const { language } = useLanguage();
@@ -19,6 +20,8 @@ const NavBar = () => {
                                 smooth={true}
                                 duration={500}
                                 offset={-70}
+                                spy={true}
+                                activeClass="text-accent"
                                 className="text-lg hover:text-accent transition-all duration-300"
                             >
                                 {t.nav[item.name as keyof typeof t.nav]}
@@ -31,4 +34,4 @@ const NavBar = () => {
     );
 };
 
-export default NavBar;
+export default memo(NavBar);

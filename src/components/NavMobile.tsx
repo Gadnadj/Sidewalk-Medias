@@ -90,6 +90,8 @@ const NavMobile = () => {
                             smooth={true}
                             duration={500}
                             offset={-70}
+                            spy={true}
+                            activeClass="text-accent"
                             className='text-xl cursor-pointer capitalize text-white hover:opacity-70 transition-all'
                             onClick={() => setIsOpen(false)}
                         >
