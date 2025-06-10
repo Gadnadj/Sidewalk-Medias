@@ -23,13 +23,20 @@ const Contact = () => {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         
+        // Nettoyage de l'email pour éviter les espaces accidentels
+        const cleanEmail = formData.email.trim();
+        if (!cleanEmail) {
+            toast.error(t.contact.form.error);
+            return;
+        }
+        const cleanFormData = { ...formData, email: cleanEmail };
         try {
             const response = await fetch(import.meta.env.VITE_FORMSPREE_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(cleanFormData)
             });
 
             if (response.ok) {
@@ -133,7 +140,7 @@ const Contact = () => {
                                 type='email'
                                 placeholder={t.contact.form.email}
                                 value={formData.email}
-                                onChange={(e) => setFormData({...formData, email: e.target.value})}
+                                onChange={(e) => setFormData({...formData, email: e.target.value.trimStart()})}
                                 required
                             />
                         </div>
