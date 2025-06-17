@@ -55,7 +55,7 @@ const Skills = () => {
                 <div className='relative flex items-center overflow-hidden'>
                     {/* Carrousel skills */}
                     <motion.div
-                        className='flex flex-nowrap gap-6 px-2 md:px-4 pb-2 w-full skills-carousel'
+                        className='flex flex-nowrap gap-4 md:gap-6 px-2 md:px-4 pb-2 w-full skills-carousel'
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -69,7 +69,7 @@ const Skills = () => {
                         {skillsList.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className='carousel-item relative group min-w-[140px] max-w-[140px] md:min-w-[160px] md:max-w-[160px] h-[180px] flex flex-col items-center justify-center rounded-2xl bg-backDivider shadow-lg transition-shadow duration-300 cursor-pointer'
+                                className='carousel-item relative group min-w-[70px] max-w-[70px] h-[90px] md:min-w-[160px] md:max-w-[160px] md:h-[180px] flex flex-col items-center justify-center rounded-xl md:rounded-2xl bg-backDivider shadow-lg transition-shadow duration-300 cursor-pointer'
                                 style={{
                                     transform: cardTransforms[index] || 'rotateX(0deg) rotateY(0deg)',
                                     transition: 'transform 0.2s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s',
@@ -80,14 +80,14 @@ const Skills = () => {
                                 onMouseLeave={() => handleMouseLeave(index)}
                             >
                                 <div className='flex flex-col items-center justify-center w-full h-full'>
-                                    <div className='relative w-14 h-14 mb-3 flex items-center justify-center'>
+                                    <div className='relative w-6 h-6 md:w-14 md:h-14 mb-1 md:mb-3 flex items-center justify-center'>
                                         <img 
                                             src={item.image} 
                                             alt={item.name}
                                             className='w-full h-full object-contain drop-shadow-lg'
                                         />
                                     </div>
-                                    <h3 className='text-base font-semibold text-center text-white group-hover:text-accent transition-all duration-300 mt-2'>
+                                    <h3 className='text-[10px] md:text-base font-semibold text-center text-white group-hover:text-accent transition-all duration-300 mt-0.5 md:mt-2'>
                                         {item.name}
                                     </h3>
                                 </div>
@@ -114,7 +114,7 @@ const Skills = () => {
                             transform: translateX(0);
                         }
                         100% {
-                            transform: translateX(calc(-140px * ${skills.length}));
+                            transform: translateX(calc(-70px * ${skills.length}));
                         }
                     }
                 }
