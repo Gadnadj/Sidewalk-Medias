@@ -4,7 +4,6 @@ import Reveal from './Reveal';
 import { Link } from 'react-scroll';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
-import LanguageToggle from './LanguageToggle';
 import ShootingStars from './ShootingStars';
 
 const Hero = () => {

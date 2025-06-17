@@ -41,7 +41,6 @@ const Skills = () => {
         const el = scrollRef.current;
         if (!el) return;
         let req: number;
-        let lastScroll = el.scrollLeft;
         const scrollStep = () => {
             if (!el) return;
             el.scrollLeft += isRTL ? -scrollSpeed : scrollSpeed;
@@ -51,7 +50,6 @@ const Skills = () => {
             } else if (isRTL && el.scrollLeft <= 0) {
                 el.scrollLeft = itemWidth * totalItems;
             }
-            lastScroll = el.scrollLeft;
             req = requestAnimationFrame(scrollStep);
         };
         req = requestAnimationFrame(scrollStep);
