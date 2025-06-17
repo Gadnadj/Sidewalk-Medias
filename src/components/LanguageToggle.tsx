@@ -8,6 +8,20 @@ const LanguageToggle = () => {
     const [isOpen, setIsOpen] = useState(false);
     const menuRef = useRef<HTMLDivElement>(null);
 
+    // Fonction pour obtenir le drapeau correspondant à la langue
+    const getLanguageFlag = (lang: Language) => {
+        switch (lang) {
+            case 'en':
+                return '🇬🇧';
+            case 'fr':
+                return '🇫🇷';
+            case 'he':
+                return '🇮🇱';
+            default:
+                return '';
+        }
+    };
+
     useEffect(() => {
         if (!isOpen) return;
         const handleClickOutside = (event: MouseEvent) => {
@@ -32,12 +46,12 @@ const LanguageToggle = () => {
         <div className="relative" ref={menuRef}>
             <motion.button
                 onClick={() => setIsOpen(!isOpen)}
-                className="language-toggle-btn absolute top-24 right-4 bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded-md flex items-center justify-center z-[400]"
+                className="language-toggle-btn absolute top-24 right-4 bg-accent hover:bg-accent-hover text-white w-12 h-12 rounded-md flex items-center justify-center z-[400]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
             >
-                <span className="text-lg font-medium">
-                    {language.toUpperCase()}
+                <span className="text-2xl">
+                    {getLanguageFlag(language)}
                 </span>
             </motion.button>
 
@@ -46,18 +60,18 @@ const LanguageToggle = () => {
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="absolute top-36 right-4 bg-white rounded-md shadow-lg z-[401]"
+                    className="absolute top-36 right-4 bg-tertiary rounded-lg shadow-lg z-[401] overflow-hidden"
                 >
                     <div className="py-1">
                         {(['en', 'fr', 'he'] as Language[]).map((lang) => (
                             <button
                                 key={lang}
                                 onClick={() => handleLanguageSelect(lang)}
-                                className={`w-full px-4 py-2 text-left hover:bg-gray-100 ${
-                                    language === lang ? 'bg-gray-100 font-medium' : ''
+                                className={`flex items-center justify-center w-full px-3 py-1.5 text-white hover:bg-accent/20 transition-colors duration-200 ${
+                                    language === lang ? 'bg-accent/30' : ''
                                 }`}
                             >
-                                {lang.toUpperCase()}
+                                <span className="text-2xl">{getLanguageFlag(lang)}</span>
                             </button>
                         ))}
                     </div>

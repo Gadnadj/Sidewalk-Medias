@@ -13,48 +13,60 @@ const hideScrollbar = {
 const Skills = () => {
     const { language } = useLanguage();
     const t = translations[language];
-    const isRTL = language === 'he';
     const scrollRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
     const [itemWidth, setItemWidth] = useState(160); // Largeur d'un skill (px)
 
-    // Duplique la liste pour l'effet infini
-    const skillsList = [...skills, ...skills];
-    const totalItems = skills.length;
+    // Vitesse du scroll automatique (pixels/frame). Plus c'est grand, plus ça va vite. Exemple : 0.5 (lent), 1 (normal), 2 (rapide)
+    const scrollSpeed = 0.7;
+
+    // Duplique la liste pour l'effet infini (trois copies pour une boucle plus fluide)
+    const skillsList = [...skills, ...skills, ...skills];
+    const totalItems = skills.length; // Nombre original de skills
 
     // Calcul de la largeur d'un item (pour le recentrage)
     useEffect(() => {
         if (scrollRef.current) {
             const firstItem = scrollRef.current.querySelector('.carousel-item');
             if (firstItem) {
-                setItemWidth((firstItem as HTMLElement).offsetWidth + 24); // 24 = gap-6
+                // Calcule la largeur de l'élément, incluant la marge droite (gap)
+                const computedStyle = window.getComputedStyle(firstItem as HTMLElement);
+                const marginRight = parseFloat(computedStyle.marginRight);
+                setItemWidth((firstItem as HTMLElement).offsetWidth + (isNaN(marginRight) ? 0 : marginRight));
             }
         }
     }, []);
 
-    // Vitesse du scroll automatique (pixels/frame). Plus c'est grand, plus ça va vite. Exemple : 0.5 (lent), 1 (normal), 2 (rapide)
-    const scrollSpeed = 0.7;
-
-    // Scroll automatique infini
+    // Scroll automatique infini (toujours LTR)
     useEffect(() => {
         if (isHovered) return;
         const el = scrollRef.current;
         if (!el) return;
-        let req: number;
+
+        let animationFrameId: number;
+        
+        // Initialise la position de défilement au début de la deuxième copie pour une boucle fluide
+        // Cela permet au carrousel de défiler LTR depuis le milieu et de se réinitialiser discrètement.
+        if (el.scrollLeft === 0) { // Seulement si pas déjà initialisé par un changement de langue, etc.
+            el.scrollLeft = itemWidth * totalItems; 
+        }
+
         const scrollStep = () => {
-            if (!el) return;
-            el.scrollLeft += isRTL ? -scrollSpeed : scrollSpeed;
-            // Si on arrive à la fin de la première liste, on recale au début
-            if (!isRTL && el.scrollLeft >= itemWidth * totalItems) {
-                el.scrollLeft = 0;
-            } else if (isRTL && el.scrollLeft <= 0) {
-                el.scrollLeft = itemWidth * totalItems;
+            // Défilement toujours LTR
+            el.scrollLeft += scrollSpeed;
+
+            // Logique de bouclage (téléportation)
+            // Quand le carrousel atteint la fin de la deuxième copie, il revient au début de la deuxième copie
+            if (el.scrollLeft >= itemWidth * totalItems * 2) {
+                el.scrollLeft = itemWidth * totalItems; // Revenir au début de la deuxième copie
             }
-            req = requestAnimationFrame(scrollStep);
+
+            animationFrameId = requestAnimationFrame(scrollStep);
         };
-        req = requestAnimationFrame(scrollStep);
-        return () => cancelAnimationFrame(req);
-    }, [isHovered, isRTL, itemWidth, totalItems]);
+
+        animationFrameId = requestAnimationFrame(scrollStep);
+        return () => cancelAnimationFrame(animationFrameId);
+    }, [isHovered, itemWidth, totalItems, scrollSpeed]);
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -86,7 +98,7 @@ const Skills = () => {
     };
 
     return (
-        <section id='skills' className='section bg-secondary py-12' dir={isRTL ? 'rtl' : 'ltr'}>
+        <section id='skills' className='section bg-secondary py-12'>
             <div className='container mx-auto'>
                 <motion.h2 
                     className='section-title text-center mb-16 '
@@ -110,7 +122,7 @@ const Skills = () => {
                         onMouseLeave={() => setIsHovered(false)}
                     >
                         {skillsList.map((item, index) => (
-                            <div
+                            <motion.div
                                 key={index}
                                 className='carousel-item relative group min-w-[140px] max-w-[140px] md:min-w-[160px] md:max-w-[160px] h-[180px] flex flex-col items-center justify-center rounded-2xl bg-secondary shadow-lg transition-shadow duration-300 cursor-pointer'
                                 style={{
@@ -134,7 +146,7 @@ const Skills = () => {
                                         {item.name}
                                     </h3>
                                 </div>
-                            </div>
+                            </motion.div>
                         ))}
                     </motion.div>
                 </div>

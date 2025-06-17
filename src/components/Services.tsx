@@ -4,6 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
 import { Service } from '../data';
 import { ServiceType } from '../translations';
+import { useState } from 'react';
 
 const Services = () => {
     const { language } = useLanguage();
@@ -21,22 +22,22 @@ const Services = () => {
         }
     };
 
-    const itemVariants = {
-        hidden: { 
-            opacity: 0,
-            y: 20,
-            scale: 0.8
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            transition: {
-                type: 'spring',
-                stiffness: 300,
-                damping: 24
-            }
-        }
+    // --- 3D Card effect ---
+    const [cardTransforms, setCardTransforms] = useState<{ [key: number]: string }>({});
+
+    const handleMouseMove = (e: React.MouseEvent, index: number) => {
+        const card = e.currentTarget as HTMLDivElement;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * 10; // max 10deg
+        const rotateY = ((x - centerX) / centerX) * 10;
+        setCardTransforms((prev) => ({ ...prev, [index]: `rotateX(${-rotateX}deg) rotateY(${rotateY}deg)` }));
+    };
+    const handleMouseLeave = (index: number) => {
+        setCardTransforms((prev) => ({ ...prev, [index]: 'rotateX(0deg) rotateY(0deg)' }));
     };
 
     return (
@@ -83,29 +84,28 @@ const Services = () => {
                     viewport={{ once: true }}
                 >
                     {services.map((service: Service, index) => (
-                        <motion.div 
-                            className='bg-secondary p-6 rounded-2xl cursor-pointer'
+                        <div
+                            className='bg-secondary p-6 rounded-2xl cursor-pointer shadow-lg transition-shadow duration-300 h-full flex flex-col items-center justify-start'
                             key={index}
-                            variants={itemVariants}
-                            whileHover={{ 
-                                scale: 1.03,
-                                transition: { type: 'spring', stiffness: 300 }
+                            style={{
+                                transform: cardTransforms[index] || 'rotateX(0deg) rotateY(0deg)',
+                                transition: 'transform 0.2s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s',
+                                boxShadow: cardTransforms[index] && cardTransforms[index] !== 'rotateX(0deg) rotateY(0deg)'
+                                    ? '0 8px 32px 0 rgba(172,107,52,0.25), 0 1.5px 8px 0 rgba(0,0,0,0.10)' : '0 2px 8px 0 rgba(0,0,0,0.10)'
                             }}
+                            onMouseMove={(e) => handleMouseMove(e, index)}
+                            onMouseLeave={() => handleMouseLeave(index)}
                         >
-                            <motion.div 
-                                className='text-accent rounded-sm w-12 h-12 flex justify-center items-center mb-4 text-[28px]'
-                                whileHover={{ 
-                                    rotate: [0, -10, 10, -10, 0],
-                                    transition: { duration: 0.5 }
-                                }}
+                            <div 
+                                className='text-white rounded-full w-16 h-16 flex justify-center items-center mb-4 text-[32px] bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/30 shadow-md'
                             >
                                 {service.icon}
-                            </motion.div>
-                            <h4 className='text-xl font-medium mb-2'>
+                            </div>
+                            <h4 className='text-xl font-semibold mb-2 text-center'>
                                 {t.services.services[service.type as ServiceType].title}
                             </h4>
-                            <p>{t.services.services[service.type as ServiceType].description}</p>
-                        </motion.div>
+                            <p className='text-center text-sm opacity-80'>{t.services.services[service.type as ServiceType].description}</p>
+                        </div>
                     ))}
                 </motion.div>
             </div>
