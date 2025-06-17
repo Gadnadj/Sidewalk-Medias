@@ -4,7 +4,7 @@ type Props = {
     bgColor?: string;
 };
 
-const SectionDivider = ({ bgColor = 'bg-secondary' }: Props) => {
+const SectionDivider = ({ bgColor = 'bg-primary' }: Props) => {
     return (
         <div className={`w-full h-24 ${bgColor} relative overflow-hidden`}>
             <motion.div

@@ -4,7 +4,9 @@ import Reveal from './Reveal';
 import { Link } from 'react-scroll';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
-import ShootingStars from './ShootingStars';
+// import ShootingStars from './ShootingStars';
+import BackgroundImg from '../assets/back.png';
+
 
 const Hero = () => {
     const { language } = useLanguage();
@@ -14,10 +16,16 @@ const Hero = () => {
     return (
         <section
             id='home'
-            className='h-screen flex items-center bg-primary lg:bg-cover lg:bg-center lg:bg-no-repeat overflow-hidden relative'
+            className='h-screen flex items-center lg:bg-cover lg:bg-center lg:bg-no-repeat overflow-hidden relative'
+            style={{
+                backgroundImage: `url(${BackgroundImg})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center center',
+                backgroundRepeat: 'no-repeat'
+            }}
             dir={isRTL ? 'rtl' : 'ltr'}
         >
-            <ShootingStars containerId="hero-particles" />
+            {/* <ShootingStars containerId="hero-particles" /> */}
             <div className="container mx-auto h-full relative z-[100]">
                 <div className="flex items-center h-full pt-8">
                     {/* left side */}

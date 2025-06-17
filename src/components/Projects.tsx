@@ -14,7 +14,7 @@ const Projects = () => {
     const [item, setItem] = useState<ItemType>({ id: '', name: 'all', image: '', category: '' });
     const [projects, setProjects] = useState<ItemType[]>([]);
     const [active, setActive] = useState<number>(0);
-    const [visibleProjects, setVisibleProjects] = useState<number>(6);
+    const [visibleProjects, setVisibleProjects] = useState<number>(3);
 
     useEffect(() => {
         // get projects based on item
@@ -26,7 +26,7 @@ const Projects = () => {
                 return project.category.toLowerCase() === item.name;
             });
             setProjects(newProjects);
-            setVisibleProjects(6); // Reset visible projects when category changes
+            setVisibleProjects(3); // Reset visible projects when category changes
         }
     }, [item]);
 

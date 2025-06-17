@@ -85,7 +85,7 @@ const Services = () => {
                 >
                     {services.map((service: Service, index) => (
                         <div
-                            className='bg-secondary p-6 rounded-2xl cursor-pointer shadow-lg transition-shadow duration-300 h-full flex flex-col items-center justify-start'
+                            className='bg-backDivider p-6 rounded-2xl cursor-pointer shadow-lg transition-shadow duration-300 h-full flex flex-col items-center justify-start'
                             key={index}
                             style={{
                                 transform: cardTransforms[index] || 'rotateX(0deg) rotateY(0deg)',

@@ -2,71 +2,15 @@ import { motion } from 'framer-motion';
 import { skills } from '../data';
 import { useLanguage } from '../context/LanguageContext';
 import { translations } from '../translations';
-import { useRef, useEffect, useState } from 'react';
-
-// CSS pour masquer la scrollbar sur tous les navigateurs
-const hideScrollbar = {
-    scrollbarWidth: 'none', // Firefox
-    msOverflowStyle: 'none' // IE 10+
-};
+import { useState } from 'react';
 
 const Skills = () => {
     const { language } = useLanguage();
     const t = translations[language];
-    const scrollRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
-    const [itemWidth, setItemWidth] = useState(160); // Largeur d'un skill (px)
 
-    // Vitesse du scroll automatique (pixels/frame). Plus c'est grand, plus ça va vite. Exemple : 0.5 (lent), 1 (normal), 2 (rapide)
-    const scrollSpeed = 0.7;
-
-    // Duplique la liste pour l'effet infini (trois copies pour une boucle plus fluide)
-    const skillsList = [...skills, ...skills, ...skills];
-    const totalItems = skills.length; // Nombre original de skills
-
-    // Calcul de la largeur d'un item (pour le recentrage)
-    useEffect(() => {
-        if (scrollRef.current) {
-            const firstItem = scrollRef.current.querySelector('.carousel-item');
-            if (firstItem) {
-                // Calcule la largeur de l'élément, incluant la marge droite (gap)
-                const computedStyle = window.getComputedStyle(firstItem as HTMLElement);
-                const marginRight = parseFloat(computedStyle.marginRight);
-                setItemWidth((firstItem as HTMLElement).offsetWidth + (isNaN(marginRight) ? 0 : marginRight));
-            }
-        }
-    }, []);
-
-    // Scroll automatique infini (toujours LTR)
-    useEffect(() => {
-        if (isHovered) return;
-        const el = scrollRef.current;
-        if (!el) return;
-
-        let animationFrameId: number;
-        
-        // Initialise la position de défilement au début de la deuxième copie pour une boucle fluide
-        // Cela permet au carrousel de défiler LTR depuis le milieu et de se réinitialiser discrètement.
-        if (el.scrollLeft === 0) { // Seulement si pas déjà initialisé par un changement de langue, etc.
-            el.scrollLeft = itemWidth * totalItems; 
-        }
-
-        const scrollStep = () => {
-            // Défilement toujours LTR
-            el.scrollLeft += scrollSpeed;
-
-            // Logique de bouclage (téléportation)
-            // Quand le carrousel atteint la fin de la deuxième copie, il revient au début de la deuxième copie
-            if (el.scrollLeft >= itemWidth * totalItems * 2) {
-                el.scrollLeft = itemWidth * totalItems; // Revenir au début de la deuxième copie
-            }
-
-            animationFrameId = requestAnimationFrame(scrollStep);
-        };
-
-        animationFrameId = requestAnimationFrame(scrollStep);
-        return () => cancelAnimationFrame(animationFrameId);
-    }, [isHovered, itemWidth, totalItems, scrollSpeed]);
+    // Duplique la liste pour l'effet infini (deux copies suffisent avec l'animation CSS)
+    const skillsList = [...skills, ...skills];
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -101,30 +45,31 @@ const Skills = () => {
         <section id='skills' className='section bg-secondary py-12'>
             <div className='container mx-auto'>
                 <motion.h2 
-                    className='section-title text-center mb-16 '
+                    className='section-title text-center mb-16'
                     initial={{ opacity: 0, y: -20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                 >
                     {t.skills?.title || 'Skills'}
                 </motion.h2>
-                <div className='relative flex items-center'>
+                <div className='relative flex items-center overflow-hidden'>
                     {/* Carrousel skills */}
                     <motion.div
-                        ref={scrollRef}
-                        className='flex flex-nowrap gap-6 overflow-x-auto px-2 md:px-4 pb-2 w-full carousel-hide-scrollbar'
-                        style={hideScrollbar as any}
+                        className='flex flex-nowrap gap-6 px-2 md:px-4 pb-2 w-full skills-carousel'
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true }}
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
+                        style={{
+                            animationPlayState: isHovered ? 'paused' : 'running'
+                        }}
                     >
                         {skillsList.map((item, index) => (
                             <motion.div
                                 key={index}
-                                className='carousel-item relative group min-w-[140px] max-w-[140px] md:min-w-[160px] md:max-w-[160px] h-[180px] flex flex-col items-center justify-center rounded-2xl bg-secondary shadow-lg transition-shadow duration-300 cursor-pointer'
+                                className='carousel-item relative group min-w-[140px] max-w-[140px] md:min-w-[160px] md:max-w-[160px] h-[180px] flex flex-col items-center justify-center rounded-2xl bg-backDivider shadow-lg transition-shadow duration-300 cursor-pointer'
                                 style={{
                                     transform: cardTransforms[index] || 'rotateX(0deg) rotateY(0deg)',
                                     transition: 'transform 0.2s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s',
@@ -152,12 +97,26 @@ const Skills = () => {
                 </div>
             </div>
             <style>{`
-                .carousel-hide-scrollbar {
-                    scrollbar-width: none;
-                    -ms-overflow-style: none;
+                .skills-carousel {
+                    animation: scroll 30s linear infinite;
                 }
-                .carousel-hide-scrollbar::-webkit-scrollbar {
-                    display: none;
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
+                    100% {
+                        transform: translateX(calc(-160px * ${skills.length}));
+                    }
+                }
+                @media (max-width: 768px) {
+                    @keyframes scroll {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        100% {
+                            transform: translateX(calc(-140px * ${skills.length}));
+                        }
+                    }
                 }
             `}</style>
         </section>

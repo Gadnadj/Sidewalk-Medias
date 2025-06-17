@@ -28,14 +28,15 @@ module.exports = {
         skills: '"Skills"'
       },
       colors: {
-        primary: '#050402',
-        secondary: '#1C1D24',
-        tertiary: '#131419',
+        primary: '#101010',
+        secondary: '#101010',
+        tertiary: '#101010',
+        backDivider: '#141414',
         accent: {
           DEFAULT: '#ac6b34',
           hover: '#925a2b'
         },
-        paragraph: '#878e99'
+        paragraph: '#ffffff'
       }
     }
   },

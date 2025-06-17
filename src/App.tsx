@@ -22,13 +22,13 @@ function App() {
         <SectionDivider bgColor="bg-primary" />
         <Brands />
         <About />
-        <SectionDivider bgColor="bg-secondary" />
+        <SectionDivider bgColor="bg-primary" />
         <Skills />
-        <SectionDivider bgColor="bg-secondary" />
+        <SectionDivider bgColor="bg-primary" />
         <Portofolio />
-        <SectionDivider bgColor="bg-tertiary" />
+        <SectionDivider bgColor="bg-primary" />
         <Services />
-        <SectionDivider bgColor="bg-tertiary"/>
+        <SectionDivider bgColor="bg-primary"/>
         <Contact />
         <Footer />
         <BackToTopButton />

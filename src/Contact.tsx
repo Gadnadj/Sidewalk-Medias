@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { motion } from 'framer-motion';
 import { useLanguage } from './context/LanguageContext';
 import { translations } from './translations';
-import ShootingStars from './components/ShootingStars';
+// import ShootingStars from './components/ShootingStars';
 
 const Contact = () => {
     const { language } = useLanguage();
@@ -61,7 +61,7 @@ const Contact = () => {
             className='section bg-primary relative'
             dir={isRTL ? 'rtl' : 'ltr'}
         >
-            <ShootingStars containerId="contact-particles" />
+            {/* <ShootingStars containerId="contact-particles" /> */}
             <div className='container mx-auto relative z-10'>
                 <div className='flex flex-col items-center text-center'>
                     <motion.h2 
@@ -128,7 +128,7 @@ const Contact = () => {
                     >
                         <div className='flex gap-8'>
                             <input
-                                className="input"
+                                className="input bg-backDivider"
                                 type='text'
                                 placeholder={t.contact.form.name}
                                 value={formData.name}
@@ -136,7 +136,7 @@ const Contact = () => {
                                 required
                             />
                             <input
-                                className="input"
+                                className="input bg-backDivider"
                                 type='email'
                                 placeholder={t.contact.form.email}
                                 value={formData.email}
@@ -145,7 +145,7 @@ const Contact = () => {
                             />
                         </div>
                         <input
-                            className="input"
+                            className="input bg-backDivider"
                             type='text'
                             placeholder={t.contact.form.subject}
                             value={formData.subject}
@@ -153,7 +153,7 @@ const Contact = () => {
                             required
                         />
                         <textarea
-                            className="textarea"
+                            className="textarea bg-backDivider"
                             placeholder={t.contact.form.message}
                             value={formData.message}
                             onChange={(e) => setFormData({...formData, message: e.target.value})}
