@@ -98,7 +98,7 @@ const Skills = () => {
             </div>
             <style>{`
                 .skills-carousel {
-                    animation: scroll 30s linear infinite;
+                    animation: scroll 22s linear infinite;
                 }
                 @keyframes scroll {
                     0% {
