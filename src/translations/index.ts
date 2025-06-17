@@ -22,7 +22,7 @@ export const translations = {
             greeting: 'Hey, We are Sidewalk Medias 👋',
             title: 'Cross the street',
             subtitle: 'with us.',
-            services: 'Logo • Business card • Flyer • Magazine • Video • Social Media • Website • Menu',
+            services: 'Logo • Business card • Flyer • Magazine • Video • Social Media • Website • Menu • AI',
             cta: 'Contact Me'
         },
         about: {
@@ -115,9 +115,9 @@ export const translations = {
         },
         hero: {
             greeting: 'Hey, Nous sommes Sidewalk Medias 👋',
-            title: 'Traversez la rue',
-            subtitle: 'avec nous.',
-            services: 'Logo • Carte de visite • Flyer • Magazine • Vidéo • Réseaux Sociaux • Site Web • Menu',
+            title: 'Cross the street',
+            subtitle: 'with us.',
+            services: 'Logo • Carte de visite • Flyer • Magazine • Vidéo • Réseaux Sociaux • Site Web • Menu • IA',
             cta: 'Contactez-moi'
         },
         about: {
@@ -140,6 +140,7 @@ export const translations = {
                 poster: 'poster',
                 menu: 'menu',
                 businesscard: 'carte de visite'
+                
             },
             loadMore: 'Plus de Projets'
         },
@@ -212,7 +213,7 @@ export const translations = {
             greeting: 'היי, אנחנו Sidewalk Medias 👋',
             title: 'חצה את הכביש',
             subtitle: 'איתנו.',
-            services: 'לוגו • כרטיס ביקור • פלייר • מגזין • וידאו • רשתות חברתיות • אתר אינטרנט • תפריט',
+            services: 'לוגו • כרטיס ביקור • פלייר • מגזין • וידאו • רשתות חברתיות • אתר אינטרנט • תפריט • AI',
             cta: 'צור קשר'
         },
         about: {

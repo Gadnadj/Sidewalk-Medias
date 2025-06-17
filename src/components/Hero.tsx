@@ -19,7 +19,6 @@ const Hero = () => {
             dir={isRTL ? 'rtl' : 'ltr'}
         >
             <ShootingStars containerId="hero-particles" />
-            <LanguageToggle />
             <div className="container mx-auto h-full relative z-[100]">
                 <div className="flex items-center h-full pt-8">
                     {/* left side */}
