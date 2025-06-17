@@ -15,7 +15,7 @@ const About = () => {
             dir={isRTL ? 'rtl' : 'ltr'}
         >
             <div className='container mx-auto'>
-                <div className='flex flex-col xl:flex-row gap-24'>
+                <div className='flex flex-col items-center justify-center max-w-3xl mx-auto'>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.5 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -25,18 +25,18 @@ const About = () => {
                     >
                     </motion.div>
                     <motion.div 
-                        className={`flex flex-col items-center text-center lg:items-start lg:text-left ${
-                            isRTL ? 'lg:items-end lg:text-right order-1' : ''
-                        }`}
+                        className='flex flex-col items-center text-center'
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        <div className='flex flex-col'>
+                        <div className='flex flex-col items-center'>
                             <motion.h2 
-                                className={`text-3xl lg:text-4xl font-medium lg:font-extrabold mb-3 before:content-about relative before:absolute before:opacity-40 before:-top-[2rem] before:hidden before:lg:block ${
-                                    isRTL ? 'before:-right-[5rem]' : 'before:-left-[5rem]'
+                                className={`text-3xl lg:text-4xl font-medium lg:font-extrabold mb-3 before:content-about relative before:absolute before:opacity-40 before:-top-[2rem] before:hidden before:lg:block before:-left-[44px] ${
+                                    language === 'en' ? 'before:-left-[55%]' : 
+                                    language === 'fr' ? 'before:-left-[32%]' :
+                                    'before:-right-[100%]'
                                 }`}
                                 initial={{ opacity: 0, y: -20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -45,14 +45,14 @@ const About = () => {
                                 {t.about.title}
                             </motion.h2>
                             <motion.hr 
-                                className='mb-8 opacity-5'
+                                className='mb-8 opacity-5 w-full'
                                 initial={{ opacity: 0, width: 0 }}
                                 whileInView={{ opacity: 0.5, width: '100%' }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: 0.3 }}
                             />
                             <motion.p 
-                                className='mb-8'
+                                className='mb-8 text-center'
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
@@ -61,7 +61,7 @@ const About = () => {
                                 {t.about.description}<br /><br />
                                 {t.about.description2}
                             </motion.p>
-                            <motion.div className={isRTL ? 'self-end' : ''}>
+                            <motion.div>
                                 <Link
                                     to="contact"
                                     smooth={true}
